@@ -8,6 +8,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchPostsData());
     console.log(blogPosts);
+    console.log("ABC");
   }, [dispatch]);
 
   return (
