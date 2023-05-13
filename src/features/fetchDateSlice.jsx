@@ -21,7 +21,14 @@ export const fetchPostsData = createAsyncThunk("getData/posts", async () => {
         alt,
       },
       categories,
-      body
+      body[]{
+        ...,
+        asset->{
+        
+          url
+         
+        }
+      }
     }`);
     // console.log(response);
     return response;
