@@ -7,14 +7,16 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchPostsData());
-    console.log(blogPosts);
-    console.log("ABC");
   }, [dispatch]);
 
   return (
     <div className="text-red-900 font-poppins mx-24">
       {blogPosts.map((post) => {
-        return <h1 key={post.slug.current}>{post.slug.current}</h1>;
+        return (
+          <div key={post.title}>
+            <h1 key={post.slug?.current}>{post.title}</h1>
+          </div>
+        );
       })}
     </div>
   );
