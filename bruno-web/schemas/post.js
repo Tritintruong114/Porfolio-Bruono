@@ -24,21 +24,14 @@ export default defineType({
       type: 'array',
       title: 'Tags for item',
       of: [
-        {
-          _key: '2fc800e67f23',
-          _type: 'tag',
-          label: 'Web',
-        },
-        {
-          _key: 'b27eaa146650',
-          _type: 'tag',
-          label: 'React',
-        },
-        {
-          _key: '5dd69519d311',
-          _type: 'tag',
-          label: 'Sanity',
-        },
+        defineArrayMember({
+          type: 'object',
+          name: 'tag',
+          fields: [
+            {type: 'string', name: 'label'},
+            {type: 'string', name: 'value'},
+          ],
+        }),
       ],
     }),
     defineField({
