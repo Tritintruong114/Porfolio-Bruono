@@ -3,25 +3,61 @@ import { sanityStore } from "../lib/client";
 
 const initialState = {
   blogPosts: [],
+  post: [],
 };
 
+export const fetchPage = createAsyncThunk("getData/post", async (slug) => {
+  try {
+    const response = await sanityStore.fetch(
+      `*[_type == "post" && slug.current == $slug][0]{
+        title,
+        "slug" : slug.current,
+      
+        body[]{
+          "keyBlock": _key,
+          link,_type,style,children[]{text,"key": _key},asset -> {
+          url
+        },
+        }
+      }`,
+      {
+        slug,
+      }
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+//
 export const fetchPostsData = createAsyncThunk("getData/posts", async () => {
   try {
     const response = await sanityStore.fetch(`*[_type == "post"]{
       title,
       slug,
       tags,
-      author,
+      author ->{name , image},
       publishedAt,
       mainImage {
         asset -> {
-          
           url
         },
         alt,
       },
       categories,
-      body
+      body[]{
+        style,
+        caption,
+        children[]{
+          text,
+          _type
+        },
+        _key,
+        asset -> {
+          url
+        }
+      }
     }`);
     // console.log(response);
     return response;
@@ -44,6 +80,16 @@ export const fetchDataSlice = createSlice({
         console.log(action.payload);
       })
       .addCase(fetchPostsData.rejected, (state) => {
+        return state;
+      })
+      .addCase(fetchPage.pending, (state) => {
+        return state;
+      })
+      .addCase(fetchPage.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.post = action.payload;
+      })
+      .addCase(fetchPage.rejected, (state) => {
         return state;
       });
   },
