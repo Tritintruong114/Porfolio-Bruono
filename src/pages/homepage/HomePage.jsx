@@ -5,7 +5,7 @@ import {
   UilUser,
 } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
-
+import bg from "../../assets/bg.jpg";
 const HomePage = () => {
   const buttons = [
     {
@@ -28,10 +28,14 @@ const HomePage = () => {
   return (
     <div>
       <div className="flex justify-between w-full">
-        <div>
+        <img
+          className="absolute w-full h-screen object-cover z-0"
+          src={bg}
+        ></img>
+        <div className="z-10">
           <h1>LOGO</h1>
         </div>
-        <div className="flex w-full justify-center items-center gap-3">
+        <div className="flex z-10 w-full justify-center items-center gap-3">
           {buttons.map((button) => {
             return (
               <div className="flex" key={button.button}>
