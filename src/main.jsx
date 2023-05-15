@@ -5,9 +5,9 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Post from "./pages/Post.jsx";
-import Homepage from "./pages/Homepage.jsx";
-
+import Posts from "./pages/posts/Posts.jsx";
+import Post from "./pages/posts/Post.jsx";
+import HomePage from "./pages/homepage/HomePage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,10 +15,14 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Homepage />,
+        element: <HomePage />,
       },
       {
-        path: "blog/:blogId",
+        path: "posts",
+        element: <Posts />,
+      },
+      {
+        path: "posts/:blogId",
         element: <Post />,
       },
     ],

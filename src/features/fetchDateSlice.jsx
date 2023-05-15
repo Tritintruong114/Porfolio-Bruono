@@ -37,7 +37,10 @@ export const fetchPostsData = createAsyncThunk("getData/posts", async () => {
       title,
       slug,
       tags,
-      author ->{name , image},
+      author->{name, 
+        "image":image.asset->url,
+      
+      },
       publishedAt,
       mainImage {
         asset -> {

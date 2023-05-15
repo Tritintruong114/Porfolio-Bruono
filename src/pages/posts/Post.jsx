@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 // import { PortableText } from "@portabletext/react";
-import { fetchPage } from "../features/fetchDateSlice";
+import { fetchPage } from "../../features/fetchDateSlice";
 const Post = () => {
   const { blogId } = useParams();
   const { post } = useSelector((store) => store.fetchData);
