@@ -105,12 +105,14 @@ const HomePage = () => {
                     className="py-3 active:bg-persian-600 rounded-xl active:text-white backdrop:blur-2xl text-center  hover:text-black hover:bg-white bg-opacity-20 w-screen sm:w-1/4  "
                     key={button.button}
                   >
-                    <h1
-                      className="font-bold text-xl capitalize"
-                      key={button.name}
-                    >
-                      <Link to={`${button.button}`}>{button.button}</Link>
-                    </h1>
+                    <Link to={`${button.button}`}>
+                      <h1
+                        className="font-bold text-xl capitalize"
+                        key={button.name}
+                      >
+                        {button.button}
+                      </h1>
+                    </Link>
                   </div>
                 );
               })}

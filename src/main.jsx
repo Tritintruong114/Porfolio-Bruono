@@ -9,6 +9,7 @@ import Posts from "./pages/posts/Posts.jsx";
 import Post from "./pages/posts/Post.jsx";
 import HomePage from "./pages/homepage/HomePage.jsx";
 import About from "./pages/about/About.jsx";
+import Projects from "./pages/projects/Projects.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,17 +21,20 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "posts",
+        path: "blogs",
         element: <Posts />,
       },
-
+      {
+        path: "projects",
+        element: <Projects />,
+      },
       {
         path: "about",
         element: <About />,
       },
 
       {
-        path: "posts/:blogId",
+        path: "blogs/:blogId",
         element: <Post />,
       },
     ],
