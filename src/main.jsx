@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Posts from "./pages/posts/Posts.jsx";
 import Post from "./pages/posts/Post.jsx";
 import HomePage from "./pages/homepage/HomePage.jsx";
+import About from "./pages/about/About.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,10 +18,17 @@ const router = createBrowserRouter([
         index: true,
         element: <HomePage />,
       },
+
       {
         path: "posts",
         element: <Posts />,
       },
+
+      {
+        path: "about",
+        element: <About />,
+      },
+
       {
         path: "posts/:blogId",
         element: <Post />,

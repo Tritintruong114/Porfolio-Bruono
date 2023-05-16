@@ -35,22 +35,27 @@ const HomePage = () => {
   ];
   const contactsIcon = [
     {
+      name: "Github",
       icon: <UilGithub />,
       link: "https://github.com/Tritintruong114",
     },
     {
+      name: "Dribble",
       icon: <UilDribbble />,
       link: "https://dribbble.com/truongtritin114",
     },
     {
+      name: "Linkedin",
       icon: <UilLinkedin />,
       link: "https://www.linkedin.com/in/tin-truong-tri-699b95251/",
     },
     {
+      name: "Twitter",
       icon: <UilTwitter />,
       link: "https://twitter.com/TruongBruno114",
     },
     {
+      name: "Insta",
       icon: <UilInstagramAlt />,
       link: "https://www.instagram.com/brunotruong114/",
     },
@@ -129,7 +134,7 @@ const HomePage = () => {
       </div>
       <div className="flex absolute bottom-24  z-30 left-3 sm:m-24 gap-3 items-end">
         {contactsIcon.map((icon) => (
-          <button className=" active:text-persian-600" key={icon.icon}>
+          <button className=" active:text-persian-600" key={icon.name}>
             <a rel="noreferrer" href={icon.link} target="_blank">
               {icon.icon}
             </a>

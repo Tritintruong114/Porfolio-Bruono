@@ -5,6 +5,7 @@ export default {
     extend: {},
     fontFamily: {
       poppins: ["Poppins"],
+      handWrite: ["Fasthand"],
     },
     colors: {
       transparent: "transparent",
