@@ -52,10 +52,12 @@ const Projects = () => {
       <div className="bg-persian-600 row-span-3 h-full sm:col-span-3  flex justify-center items-center">
         ABC
       </div>
-      <div className="bg-persian-900 h-full flex justify-center items-center">
-        {projects.map((project) => {
-          return <h1 key={project.project}>{project.project}</h1>;
-        })}
+      <div className="bg-persian-900  h-full flex flex-col gap-3 justify-center items-center">
+        <div className=" overflow-scroll no-scrollbar ">
+          {projects.map((project) => {
+            return <h1 key={project.project}>{project.project}</h1>;
+          })}
+        </div>
       </div>
     </div>
   );
