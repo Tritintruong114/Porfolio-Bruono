@@ -12,10 +12,10 @@ export const fetchPage = createAsyncThunk("getData/post", async (slug) => {
       `*[_type == "post" && slug.current == $slug][0]{
         title,
         "slug" : slug.current,
-      
         body[]{
-          "keyBlock": _key,
-          link,_type,style,children[]{text,"key": _key},asset -> {
+          ...,
+           code,
+          "imageUrl":asset -> {
           url
         },
         }
@@ -56,13 +56,13 @@ export const fetchPostsData = createAsyncThunk("getData/posts", async () => {
           text,
           _type
         },
+        body,
         _key,
         asset -> {
           url
         }
       }
     }`);
-    // console.log(response);
     return response;
   } catch (error) {
     console.log(error);

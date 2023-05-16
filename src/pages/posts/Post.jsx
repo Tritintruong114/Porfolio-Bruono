@@ -1,34 +1,31 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-// import { PortableText } from "@portabletext/react";
+import { PortableText } from "@portabletext/react";
 import { fetchPage } from "../../features/fetchDateSlice";
+import { RichTextComponents } from "../../components/RichTextComponents";
+
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
+hljs.registerLanguage("javascript", javascript);
+
 const Post = () => {
+  // console.log(RichTextComponents);
   const { blogId } = useParams();
   const { post } = useSelector((store) => store.fetchData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(blogId);
     dispatch(fetchPage(blogId));
   }, [dispatch, blogId]);
 
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
+
   return (
-    <div>
-      <div>
-        <h1>{post.title}</h1>
-        {post.body?.map((block) => (
-          <div key={block.keyBlock}>
-            {block.style === "h2" && (
-              <h2 className="font-3xl font-bold">{block.children.text}</h2>
-            )}
-            <img className="w-full" src={block.asset?.url}></img>
-            {block.children?.map((text) => (
-              <p key={text.key}>{text.text}</p>
-            ))}
-          </div>
-        ))}
-      </div>
+    <div className={`text-white`}>
+      <PortableText value={post?.body} components={RichTextComponents} />
     </div>
   );
 };

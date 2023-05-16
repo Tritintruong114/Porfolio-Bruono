@@ -17,19 +17,19 @@ const Posts = () => {
         return (
           <>
             <div key={post.title}>
-              <Link to={`${post.slug.current}`}>
+              <Link to={`${post.slug?.current}`}>
                 <h1 className="font-bold text-xl" key={post.slug?.current}>
                   {post.title}
                 </h1>
                 <div className="flex w-full">
-                  <img className="rounded-full h-12" src={post.author.image} />
+                  <img className="rounded-full h-12" src={post.author?.image} />
                   <div className="flex items-center gap-3">
-                    <p>{post.author.name}</p>
+                    <p>{post.author?.name}</p>
                     <p className="text-xs">{post.publishedAt}</p>
                   </div>
                 </div>
 
-                <img className="" src={post.mainImage.asset.url}></img>
+                <img className="" src={post.mainImage?.asset.url}></img>
               </Link>
             </div>
           </>

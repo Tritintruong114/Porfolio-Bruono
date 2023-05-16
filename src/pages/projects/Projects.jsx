@@ -53,7 +53,9 @@ const Projects = () => {
         ABC
       </div>
       <div className="bg-persian-900 h-full flex justify-center items-center">
-        ABC
+        {projects.map((project) => {
+          return <h1 key={project.project}>{project.project}</h1>;
+        })}
       </div>
     </div>
   );
