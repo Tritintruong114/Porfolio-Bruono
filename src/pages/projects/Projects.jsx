@@ -50,6 +50,7 @@ const projects = [
       { style: <SiTailwindcss /> },
       { frameWork: <SiReact /> },
       { database: <SiFirebase /> },
+      { router: <SiReactrouter /> },
       { content: <SiApacherocketmq /> },
       { state: <SiRedux /> },
     ],
