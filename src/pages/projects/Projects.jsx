@@ -88,12 +88,14 @@ const Projects = () => {
           </button>
         </Link>
       </div>
-      <div className="bg-persian-600 p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
-        <div className="h-full bg-mahogany-600 rounded-xl w-full flex items-center  justify-center">
-          This is Content
+      <div className="bg-thunder-600  p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
+        <div className="h-full grid-cols-5 grid-rows-4 text-white bg-white gap-3 p-9 bg-opacity-95 rounded-xl w-full grid items-center  justify-center">
+          <div className="bg-thunder-900 col-span-3 no-scrollbar row-span-4 overflow-scroll p-9 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0"></div>
+          <div className="bg-thunder-900 col-span-2 no-scrollbar row-span-2 overflow-scroll p-9 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0"></div>
+          <div className="bg-thunder-900 col-span-2 no-scrollbar row-span-2 overflow-scroll p-9 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0"></div>
         </div>
       </div>
-      <div className="bg-persian-900 rounded-b-xl md:rounded-tl-none sm:rounded-r-xl relative  sm:rounded-bl-none sm:col-span-2 md:col-span-2 xl:col-span-1    text-black sm:p-6 h-full flex flex-col justify-center items-center">
+      <div className=" rounded-b-xl bg-thunder-600  md:rounded-tl-none sm:rounded-r-xl relative  sm:rounded-bl-none sm:col-span-2 md:col-span-2 xl:col-span-1    text-black sm:p-6 h-full flex flex-col justify-center items-center">
         <h1 className="absolute text-xl top-0 text-white">
           <CgScrollV />
         </h1>
@@ -101,7 +103,7 @@ const Projects = () => {
           {projects.map((project) => {
             return (
               <div
-                className="snap-start  gap-3 text-center  bg-white h-full flex-shrink-0 flex items-center flex-col justify-center"
+                className="snap-start  gap-3 text-center  bg-white bg-opacity-95 h-full flex-shrink-0 flex items-center flex-col justify-center"
                 key={project.project}
               >
                 <h1
