@@ -71,6 +71,11 @@ const projects = [
     studio: "https://elio.sanity.studio/desk/post",
   },
 ];
+
+const handleScroll = () => {
+  // console.log("scroll action");
+  //when the scroll stop --> setObject()
+};
 const Projects = () => {
   return (
     <div className="grid bg-black sm:grid-cols-5 grid-rows-4 sm:grid-rows-1 xl:grid-cols-4 md:grid-cols-5 items-center h-full w-full p-6 sm:p-12">
@@ -81,6 +86,7 @@ const Projects = () => {
           </button>
         </Link>
       </div>
+
       <div className="absolute left-3 z-30 top-3">
         <Link to="/">
           <button className="p-3 sm:opacity-0 opacity-100 text-white active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white ">
@@ -95,11 +101,15 @@ const Projects = () => {
           <div className="bg-thunder-900 col-span-2 no-scrollbar row-span-2 overflow-scroll p-9 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0"></div>
         </div>
       </div>
+
       <div className=" rounded-b-xl bg-thunder-600  md:rounded-tl-none sm:rounded-r-xl relative  sm:rounded-bl-none sm:col-span-2 md:col-span-2 xl:col-span-1    text-black sm:p-6 h-full flex flex-col justify-center items-center">
         <h1 className="absolute text-xl top-0 text-white">
           <CgScrollV />
         </h1>
-        <div className="snap-y w-full h-full rounded-b-xl sm:rounded-xl snap-mandatory overflow-scroll no-scrollbar  ">
+        <div
+          onScroll={() => handleScroll()}
+          className="snap-y w-full h-full rounded-b-xl sm:rounded-xl snap-mandatory overflow-scroll no-scrollbar  "
+        >
           {projects.map((project) => {
             return (
               <div
