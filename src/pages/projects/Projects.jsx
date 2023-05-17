@@ -11,6 +11,7 @@ import {
   SiApacherocketmq,
 } from "react-icons/si";
 import { CgScrollV } from "react-icons/cg";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 const projects = [
   {
     project: "Movie Dashboard",
@@ -75,23 +76,32 @@ const Projects = () => {
     <div className="grid bg-black sm:grid-cols-5 grid-rows-4 sm:grid-rows-1 xl:grid-cols-4 md:grid-cols-5 items-center h-full w-full p-6 sm:p-12">
       <div className="absolute left-3 z-30 top-3">
         <Link to="/">
-          <button className="p-3 text-white active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white ">
+          <button className="p-3 sm:opacity-100 opacity-0 text-white active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white ">
             Back
           </button>
         </Link>
       </div>
-      <div className="bg-persian-600 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
-        ABC
+      <div className="absolute left-3 z-30 top-3">
+        <Link to="/">
+          <button className="p-3 sm:opacity-0 opacity-100 text-white active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white ">
+            <IoArrowBackCircleOutline />
+          </button>
+        </Link>
+      </div>
+      <div className="bg-persian-600 p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
+        <div className="h-full bg-mahogany-600 rounded-xl w-full flex items-center  justify-center">
+          This is Content
+        </div>
       </div>
       <div className="bg-persian-900 rounded-b-xl md:rounded-tl-none sm:rounded-r-xl relative  sm:rounded-bl-none sm:col-span-2 md:col-span-2 xl:col-span-1    text-black sm:p-6 h-full flex flex-col justify-center items-center">
         <h1 className="absolute text-xl top-0 text-white">
           <CgScrollV />
         </h1>
-        <div className="snap-y w-full h-full rounded-b-xl sm:rounded-3xl snap-mandatory overflow-scroll no-scrollbar  ">
+        <div className="snap-y w-full h-full rounded-b-xl sm:rounded-xl snap-mandatory overflow-scroll no-scrollbar  ">
           {projects.map((project) => {
             return (
               <div
-                className="snap-start gap-3 text-center  bg-white h-full flex-shrink-0 flex items-center flex-col justify-center"
+                className="snap-start  gap-3 text-center  bg-white h-full flex-shrink-0 flex items-center flex-col justify-center"
                 key={project.project}
               >
                 <h1
@@ -100,7 +110,7 @@ const Projects = () => {
                 >
                   {project.project}
                 </h1>
-                <div className="flex sm:grid xl:flex w-full  no-scrollbar flex-shrink-0 overflow-scroll items-center justify-center gap-3">
+                <div className="flex sm:grid md:flex xl:flex w-full  no-scrollbar flex-shrink-0 overflow-scroll items-center justify-center gap-3">
                   {project.techStack.map((stack) => {
                     return (
                       <div className="text-xl" key={stack.style}>
@@ -114,7 +124,7 @@ const Projects = () => {
                     );
                   })}
                 </div>
-                <div className="no-scrollbar xl:flex sm:grid flex-shrink-0 overflow-scroll flex items-center justify-center w-full gap-3 text-xs md:text-sm font-light">
+                <div className="no-scrollbar md:flex xl:flex sm:grid flex-shrink-0 overflow-scroll flex items-center justify-center w-full gap-3 text-xs md:text-sm font-light">
                   <a
                     target="_blank"
                     rel="noreferrer"
@@ -149,6 +159,7 @@ const Projects = () => {
             );
           })}
         </div>
+        {/* <div className="absolute h-full w-full bg-white z-0"></div> */}
       </div>
     </div>
   );
