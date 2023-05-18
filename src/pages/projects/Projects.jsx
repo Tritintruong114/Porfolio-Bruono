@@ -12,6 +12,7 @@ import {
 } from "react-icons/si";
 import { CgScrollV } from "react-icons/cg";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { useState } from "react";
 const projects = [
   {
     project: "Movie Dashboard",
@@ -72,10 +73,8 @@ const projects = [
     studio: "https://elio.sanity.studio/desk/post",
   },
 ];
-
-const handleScroll = () => {
-  // console.log("scroll action");
-  //when the scroll stop --> setObject()
+const handleScroll = (event) => {
+  console.log(event);
 };
 const Projects = () => {
   return (
@@ -108,7 +107,7 @@ const Projects = () => {
           <CgScrollV />
         </h1>
         <div
-          onScroll={() => handleScroll()}
+          onScroll={handleScroll}
           className="snap-y w-full h-full rounded-b-xl sm:rounded-xl snap-mandatory overflow-scroll no-scrollbar  "
         >
           {projects.map((project) => {
