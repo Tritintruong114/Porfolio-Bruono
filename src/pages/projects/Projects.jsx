@@ -12,9 +12,22 @@ import {
 } from "react-icons/si";
 import { CgScrollV } from "react-icons/cg";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
-import { useRef, useState, useEffect } from "react";
-import { box1, box2, main } from "../../assets/projects/Movie1/index";
+import { useRef, useState } from "react";
+import {
+  box3,
+  box1,
+  main,
+  box2,
+  box4,
+} from "../../assets/projects/Movie1/index";
 
+import {
+  box3 as ms3,
+  box1 as ms1,
+  main as msMain,
+  box2 as ms2,
+  box4 as ms4,
+} from "../../assets/projects/MusicPlayer/index";
 const projects = [
   {
     id: "1",
@@ -22,17 +35,12 @@ const projects = [
     linkDemo: "https://sfcpj2.csb.app/",
     gitHubLink: "https://github.com/Tritintruong114/Netflix-Clone-DashBoard",
     techStack: [{ style: <SiCss3 /> }, { frameWork: <SiJavascript /> }],
-    image: [
-      {
-        main: main,
-        box1: box1,
-        box2: box2,
-      },
-    ],
+    image: { box1, box2, box3, main, box4 },
   },
   {
     id: "2",
     project: "Music Player",
+    desc: "Live preview",
     linkDemo: "https://master--voluble-otter-f2f9c8.netlify.app/",
     gitHubLink:
       "https://github.com/Tritintruong114/react-soundCloud/tree/master",
@@ -41,6 +49,7 @@ const projects = [
       { frameWork: <SiReact /> },
       { router: <SiReactrouter /> },
     ],
+    image: { box1: ms1, box2: ms2, box3: ms3, main: msMain, box4: ms4 },
   },
   {
     id: "3",
@@ -54,6 +63,7 @@ const projects = [
       { database: <SiFirebase /> },
       { state: <SiRedux /> },
     ],
+    // image:
   },
   {
     id: "4",
@@ -123,7 +133,7 @@ const projects = [
 //   };
 // };
 
-function debounce(func, delay) {
+const debounce = (handleFunction, delay) => {
   let timeout;
 
   return function executedFunc(...args) {
@@ -132,23 +142,21 @@ function debounce(func, delay) {
     }
 
     timeout = setTimeout(() => {
-      func(...args);
+      handleFunction(...args);
       timeout = null;
     }, delay);
   };
-}
+};
 
 const Projects = () => {
   const myRef = useRef();
-  const [color, setColor] = useState(0);
+  const [projectIndex, setProjectIndex] = useState(0);
 
   const handleScroll = () => {
     const cord = Math.floor(myRef.current.scrollTop) / 730.8;
-    console.log(Math.ceil(cord));
-    setColor(cord);
+    setProjectIndex(Math.round(cord));
   };
-
-  const tHandler = debounce(handleScroll, 500);
+  const tHandler = debounce(handleScroll, 100);
   return (
     <div className="grid bg-black sm:grid-cols-5 grid-rows-4 sm:grid-rows-1 xl:grid-cols-4 md:grid-cols-5 items-center h-full w-full p-6 sm:p-12">
       <div className="absolute left-3 z-30 top-3">
@@ -166,18 +174,165 @@ const Projects = () => {
           </button>
         </Link>
       </div>
-      <div className="bg-thunder-600  p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
-        <div className="h-full grid-cols-5 grid-rows-4 text-white bg-white gap-3 p-9 bg-opacity-95 rounded-xl w-full grid items-center  justify-center">
-          <div
-            className={`${"bg-thunder-900"} col-span-5 no-scrollbar row-span-4 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
-          >
-            <img
-              className="w-full h-full object-cover object-left"
-              src={box2}
-            ></img>
+
+      {projectIndex === 0 && (
+        <div className="bg-thunder-600  p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
+          <div className="h-full grid-cols-1 xl:grid-cols-5 grid-rows-4 text-white bg-white gap-3 p-9 bg-opacity-95 rounded-xl w-full grid items-center  justify-center">
+            <div
+              className={`${"bg-thunder-900"} col-span-4 no-scrollbar row-span-4 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              <img
+                className="h-full w-full object-cover "
+                src={projects[projectIndex].image.main}
+              ></img>
+            </div>
+            <div
+              className={`${"bg-thunder-900"} col-span-1 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box1}
+              ></img>
+            </div>{" "}
+            <div
+              className={`${"bg-thunder-900"} col-span-1 row-span-4 no-scrollbar overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover object-center"
+                src={projects[projectIndex].image.box4}
+              ></img>
+            </div>
+            <div
+              className={`${"bg-thunder-900"} col-span-2 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box3}
+              ></img>
+            </div>{" "}
+            <div
+              className={`${"bg-thunder-900"} col-span-2 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box2}
+              ></img>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+      {projectIndex === 1 && (
+        <div className="bg-thunder-600  p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
+          <div className="h-full grid-cols-5 grid-rows-6 text-white bg-white gap-3 p-9 bg-opacity-95 rounded-xl w-full grid items-center  justify-center">
+            <div
+              className={` col-span-4 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <iframe
+                className="h-full w-1/2 absolute right-1/4"
+                src="https://master--voluble-otter-f2f9c8.netlify.app/"
+              ></iframe>
+              {/* <img
+                className="h-full w-full object-contain object-center "
+                src={projects[projectIndex].image.main}
+              ></img> */}
+            </div>
+            <div
+              className={`${"bg-thunder-900"} col-span-1 no-scrollbar row-span-3 overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
+            >
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box1}
+              ></img>
+            </div>
+            <div
+              className={`${"bg-thunder-900"} col-span-1 row-span-3 no-scrollbar overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full "
+                src={projects[projectIndex].image.box4}
+              ></img>
+            </div>
+            {/* <div
+              className={`${"bg-thunder-900"} col-span-2 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box3}
+              ></img>
+            </div>{" "}
+            <div
+              className={`${"bg-thunder-900"} col-span-2 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box2}
+              ></img>
+            </div> */}
+          </div>
+        </div>
+      )}
+      {projectIndex === 2 && (
+        <div className="bg-thunder-600  p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
+          <div className="h-full grid-cols-5 grid-rows-6 text-white bg-white gap-3 p-9 bg-opacity-95 rounded-xl w-full grid items-center  justify-center">
+            <div
+              className={` col-span-4 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <iframe
+                className="h-full w-full"
+                src="https://iridescent-taffy-0e81cb.netlify.app/"
+              ></iframe>
+              {/* <img
+                className="h-full w-full object-contain object-center "
+                src={projects[projectIndex].image.main}
+              ></img> */}
+            </div>
+            {/* <div
+              className={`${"bg-thunder-900"} col-span-1 no-scrollbar row-span-3 overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
+            >
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box1}
+              ></img>
+            </div>
+            <div
+              className={`${"bg-thunder-900"} col-span-1 row-span-3 no-scrollbar overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full "
+                src={projects[projectIndex].image.box4}
+              ></img>
+            </div> */}
+            {/* <div
+              className={`${"bg-thunder-900"} col-span-2 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box3}
+              ></img>
+            </div>{" "}
+            <div
+              className={`${"bg-thunder-900"} col-span-2 no-scrollbar row-span-2 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+            >
+              {" "}
+              <img
+                className="w-full h-full object-cover"
+                src={projects[projectIndex].image.box2}
+              ></img>
+            </div> */}
+          </div>
+        </div>
+      )}
 
       <div className=" rounded-b-xl bg-thunder-600  md:rounded-tl-none sm:rounded-r-xl relative  sm:rounded-bl-none sm:col-span-2 md:col-span-2 xl:col-span-1    text-black sm:p-6 h-full flex flex-col justify-center items-center">
         <h1 className="absolute text-xl top-0 text-white">
@@ -197,6 +352,9 @@ const Projects = () => {
                 <h1 className="font-bold text-md md:text-3xl">
                   {project.project}
                 </h1>
+                <p className="text-xl font-bold text-persian-600">
+                  {project.desc ? project.desc : null}
+                </p>
                 <div className="flex sm:grid md:flex xl:flex w-full  no-scrollbar flex-shrink-0 overflow-scroll items-center justify-center gap-3">
                   {project.techStack.map((stack) => {
                     return (
