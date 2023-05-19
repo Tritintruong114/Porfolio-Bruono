@@ -11,6 +11,10 @@ export const fetchPage = createAsyncThunk("getData/post", async (slug) => {
     const response = await sanityStore.fetch(
       `*[_type == "post" && slug.current == $slug][0]{
         title,
+        author->{name, 
+          "image":image.asset->url,
+        },
+        publishedAt,
         "slug" : slug.current,
         body[]{
           ...,

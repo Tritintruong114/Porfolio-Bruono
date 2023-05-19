@@ -28,6 +28,8 @@ import {
   box2 as ms2,
   box4 as ms4,
 } from "../../assets/projects/MusicPlayer/index";
+import image1 from "./image1.png";
+import imageBruno from "./imageBruno.png";
 const projects = [
   {
     id: "1",
@@ -158,7 +160,7 @@ const Projects = () => {
     const cord = Math.floor(myRef.current.scrollTop) / 730.8;
     setProjectIndex(Math.round(cord));
   };
-  const tHandler = debounce(handleScroll, 50);
+  const tHandler = debounce(handleScroll, 100);
   return (
     <div className="grid bg-black sm:grid-cols-5 grid-rows-4 sm:grid-rows-1 xl:grid-cols-4 md:grid-cols-5 items-center h-full w-full p-6 sm:p-12">
       <div className="absolute left-3 z-30 top-3">
@@ -286,10 +288,11 @@ const Projects = () => {
               className={` col-span-5 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
               {" "}
-              <iframe
+              {/* <iframe
                 className="h-full w-full"
                 src={projects[projectIndex].linkDemo}
-              ></iframe>
+              ></iframe> */}
+              <img className="w-full h-full object-cover" src={image1}></img>
             </div>
           </div>
         </div>
@@ -301,10 +304,10 @@ const Projects = () => {
               className={` col-span-5 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
               {" "}
-              <iframe
-                className="h-full w-full"
-                src={projects[projectIndex].linkDemo}
-              ></iframe>
+              <img
+                className="w-full h-full object-cover"
+                src={imageBruno}
+              ></img>
             </div>
           </div>
         </div>

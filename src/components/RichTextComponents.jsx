@@ -5,7 +5,7 @@ export const RichTextComponents = {
     image: ({ value }) => {
       return (
         <img
-          className="w-1/2 object-cover rounded-3xl"
+          className="w-full my-3 object-cover rounded-3xl"
           src={value.imageUrl?.url}
         />
       );
@@ -13,10 +13,10 @@ export const RichTextComponents = {
   },
   block: {
     h1: ({ children }) => (
-      <h1 className="text-3xl text-white font-bold">{children}</h1>
+      <h1 className="text-6xl text-center text-black font-bold">{children}</h1>
     ),
-    normal: ({ children }) => <p className="text-white">{children}</p>,
-    h2: ({ children }) => <h2 className="text-3xl text-white">{children}</h2>,
+    normal: ({ children }) => <p className="text-black">{children}</p>,
+    h2: ({ children }) => <h2 className="text-3xl text-black">{children}</h2>,
   },
   myCodeField: {
     code: ({ code }) => (

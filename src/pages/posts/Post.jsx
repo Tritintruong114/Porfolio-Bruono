@@ -27,13 +27,14 @@ const useScroll = () => {
 };
 const Post = () => {
   // console.log(RichTextComponents);
-  const { y } = useScroll();
+  // const { y } = useScroll();
   const { blogId } = useParams();
   const { post } = useSelector((store) => store.fetchData);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchPage(blogId));
+    console.log(post);
   }, [dispatch, blogId]);
 
   useEffect(() => {
@@ -41,7 +42,7 @@ const Post = () => {
   }, []);
 
   return (
-    <div className={`text-white`}>
+    <div className="mx-24 pt-12 text-centercontent-center flex flex-col justify-center items-center">
       <PortableText value={post?.body} components={RichTextComponents} />
     </div>
   );
