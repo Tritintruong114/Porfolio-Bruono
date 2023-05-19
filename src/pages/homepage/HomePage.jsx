@@ -62,7 +62,7 @@ const HomePage = () => {
     },
   ];
   return (
-    <div className="h-screen w-full text-white ">
+    <div className="h-full w-full text-white ">
       <img
         className="absolute w-full z-0 h-full object-cover"
         src="https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.15752-9/346105316_114287088332462_4537839571767316912_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=cgBljPQFoq4AX9wN7EX&_nc_ht=scontent.fsgn5-8.fna&oh=03_AdTdAT6oj8C8_Kdg7Z0jLafhypkUZX7Keq8MprTNUgluMw&oe=6489DBAC"
