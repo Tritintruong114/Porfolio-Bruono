@@ -10,6 +10,11 @@ import {defineType, defineArrayMember, defineField} from 'sanity'
  *    type: 'blockContent'
  *  }
  */
+const HighlightIcon = () => <span style={{fontWeight: 'bold'}}>H</span>
+const HighlightDecorator = (props) => (
+  <span className="underline bg-blue-400 decoration-blue-400">{props.children}</span>
+)
+
 export default defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -38,6 +43,7 @@ export default defineType({
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+          {title: 'H', value: 'highlight', component: HighlightDecorator, icon: HighlightIcon},
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [

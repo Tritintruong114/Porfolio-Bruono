@@ -93,7 +93,7 @@ export const fetchDataSlice = createSlice({
         return state;
       })
       .addCase(fetchPage.fulfilled, (state, action) => {
-        console.log(action.payload);
+        // console.log(action.payload);
         state.post = action.payload;
       })
       .addCase(fetchPage.rejected, (state) => {

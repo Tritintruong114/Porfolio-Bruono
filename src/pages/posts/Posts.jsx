@@ -18,7 +18,7 @@ const Posts = () => {
           <>
             <div key={post.title}>
               <Link to={`${post.slug?.current}`}>
-                <h1 className="font-bold text-xl" key={post.slug?.current}>
+                <h1 className="font-bold text-3xl" key={post.slug?.current}>
                   {post.title}
                 </h1>
                 <div className="flex w-full">
@@ -29,7 +29,10 @@ const Posts = () => {
                   </div>
                 </div>
 
-                <img className="" src={post.mainImage?.asset.url}></img>
+                <img
+                  className="h-3/4 rounded-3xl  w-1/2 object-cover"
+                  src={post.mainImage?.asset.url}
+                ></img>
               </Link>
             </div>
           </>
