@@ -182,26 +182,26 @@ const Projects = () => {
         </Link>
       </div>
       {projectIndex === 0 && (
-        <div className=" p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
-          <div className="h-full grid-cols-1 no-scrollbar overflow-scroll xl:grid-cols-5 xl:grid-rows-6 text-white bg-white gap-3 p-9 rounded-xl w-full grid items-center  justify-center">
+        <div className=" p-3  sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
+          <div className="h-full grid-cols-1 no-scrollbar overflow-scroll xl:grid-cols-3 xl:grid-rows-6 text-white bg-white gap-3 p-9 rounded-xl w-full grid items-center  justify-center">
             <div
-              className={`${"bg-thunder-900"} gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+              className={`${"bg-thunder-900"} rounded-3xl  xl:row-span-4 xl:col-span-2 gap-3 text-center content-center   h-full w-full flex-shrink-0`}
             >
               <img
-                className="h-full w-full object-cover "
+                className="h-full roun3 w-full rounded-3xl object-cover xl:object-left "
                 src={projects[projectIndex].image.main}
               ></img>
             </div>
             <div
-              className={`${"bg-thunder-900"} gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+              className={`${"bg-thunder-900"} rounded-3xl  xl:row-span-6 gap-3 text-center content-center   h-full w-full flex-shrink-0`}
             >
               {" "}
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full rounded-3xl  object-cover"
                 src={projects[projectIndex].image.box1}
               ></img>
             </div>{" "}
-            <div
+            {/* <div
               className={`${"bg-thunder-900"}   gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
               {" "}
@@ -209,22 +209,22 @@ const Projects = () => {
                 className="w-full h-full object-cover object-center"
                 src={projects[projectIndex].image.box4}
               ></img>
-            </div>
+            </div> */}
             <div
-              className={`${"bg-thunder-900"} gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+              className={`${"bg-thunder-900"} xl:row-span-3 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
               {" "}
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full rounded-3xl object-cover"
                 src={projects[projectIndex].image.box3}
               ></img>
             </div>{" "}
             <div
-              className={`${"bg-thunder-900"} gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
+              className={`${"bg-thunder-900"} xl:row-span-3 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
               {" "}
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full rounded-3xl object-cover"
                 src={projects[projectIndex].image.box2}
               ></img>
             </div>
@@ -233,25 +233,21 @@ const Projects = () => {
       )}
       {projectIndex === 1 && (
         <div className=" p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
-          <div className="h-full grid-cols-6 grid-rows-6 text-white bg-white gap-3 p-9 bg-opacity-95 rounded-xl w-full grid items-center  justify-center">
-            <div
-              className={` col-span-5 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
-            >
-              {" "}
-              <iframe
-                className="h-full  w-1/2 absolute right-1/4"
-                src={projects[projectIndex].linkDemo}
-              ></iframe>
-            </div>
-            <div
+          <div className="h-full w-full">
+            <iframe
+              className="h-full w-full rounded-3xl"
+              src={projects[projectIndex].linkDemo}
+            ></iframe>
+          </div>
+          {/* <div
               className={`${"bg-thunder-900"} col-span-1 no-scrollbar row-span-3 overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
             >
               <img
                 className="w-full h-full object-cover"
                 src={projects[projectIndex].image.box1}
               ></img>
-            </div>
-            <div
+            </div> */}
+          {/* <div
               className={`${"bg-thunder-900"} col-span-1 row-span-3 no-scrollbar overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
             >
               {" "}
@@ -259,9 +255,9 @@ const Projects = () => {
                 className="w-full h-full "
                 src={projects[projectIndex].image.box4}
               ></img>
-            </div>
-          </div>
+            </div> */}
         </div>
+        // </div>
       )}
       {projectIndex === 2 && (
         <div className=" p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
@@ -324,7 +320,7 @@ const Projects = () => {
             return (
               <div
                 key={index}
-                className="snap-start  gap-3 text-center  bg-white bg-opacity-95 h-full flex-shrink-0 flex items-center flex-col justify-center"
+                className="snap-start  gap-3 text-center  bg-white h-full flex-shrink-0 flex items-center flex-col justify-center"
               >
                 <h1 className="font-bold text-md md:text-3xl">
                   {project.project}

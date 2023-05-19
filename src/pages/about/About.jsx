@@ -6,7 +6,7 @@ const about = {
 };
 const About = () => {
   return (
-    <div className="text-white relative">
+    <div className="text-white relative w-full ">
       <div className="absolute left-6 z-30 top-6">
         <Link to="/">
           <button className="p-3 active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white bg-opacity-20 ">
