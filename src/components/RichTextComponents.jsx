@@ -10,6 +10,14 @@ export const RichTextComponents = {
         />
       );
     },
+
+    code: ({ code }) => (
+      <pre className="text-black">
+        <code className="language-javascript hljs">
+          <p>{code}</p>
+        </code>
+      </pre>
+    ),
   },
   block: {
     h1: ({ children }) => (
@@ -17,6 +25,7 @@ export const RichTextComponents = {
         {children}
       </h1>
     ),
+
     normal: ({ children }) => (
       <p className="w-3/4 xl:w-3/4 text-xl py-6 text-black">{children}</p>
     ),
