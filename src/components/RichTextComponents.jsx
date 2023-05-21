@@ -10,14 +10,6 @@ export const RichTextComponents = {
         />
       );
     },
-
-    code: ({ code }) => (
-      <pre className="text-black">
-        <code className="language-javascript hljs">
-          <p>{code}</p>
-        </code>
-      </pre>
-    ),
   },
   block: {
     h1: ({ children }) => (

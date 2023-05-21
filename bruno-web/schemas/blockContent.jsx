@@ -87,20 +87,5 @@ export default defineType({
         },
       ],
     }),
-    defineArrayMember({
-      type: 'code',
-      name: 'code',
-      title: 'Code',
-      options: {
-        language: 'javascript',
-        languageAlternatives: [
-          {title: 'Javascript', value: 'javascript'},
-          {title: 'HTML', value: 'html'},
-          {title: 'CSS', value: 'css'},
-        ],
-        withFilename: true,
-        highlightedLines: true,
-      },
-    }),
   ],
 })
