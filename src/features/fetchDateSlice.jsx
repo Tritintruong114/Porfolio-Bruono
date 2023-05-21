@@ -6,6 +6,9 @@ const initialState = {
   post: [],
 };
 
+const softDate = (a, b) => {
+  return new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf();
+};
 export const fetchPage = createAsyncThunk("getData/post", async (slug) => {
   try {
     const response = await sanityStore.fetch(
@@ -83,8 +86,10 @@ export const fetchDataSlice = createSlice({
         return state;
       })
       .addCase(fetchPostsData.fulfilled, (state, action) => {
+        const newPost = action.payload.sort(softDate);
+        // console.log(action.payload);
+        // console.log(newPost.sort(softDate), "Sorted");
         state.blogPosts = action.payload;
-        console.log(action.payload);
       })
       .addCase(fetchPostsData.rejected, (state) => {
         return state;

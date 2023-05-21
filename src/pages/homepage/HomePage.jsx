@@ -12,10 +12,13 @@ import {
   UilInstagramAlt,
 } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bruno from "./bruno.pdf";
+import { useDispatch } from "react-redux";
+import { fetchPostsData } from "../../features/fetchDateSlice";
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const dispatch = useDispatch();
   const buttons = [
     {
       button: "home",
@@ -61,6 +64,11 @@ const HomePage = () => {
       link: "https://www.instagram.com/brunotruong114/",
     },
   ];
+
+  useEffect(() => {
+    dispatch(fetchPostsData());
+  }, [dispatch]);
+
   return (
     <div className="h-full w-full text-white ">
       <img

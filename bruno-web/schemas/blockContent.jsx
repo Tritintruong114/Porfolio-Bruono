@@ -44,7 +44,7 @@ export default defineType({
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
           {title: 'H', value: 'highlight', component: HighlightDecorator, icon: HighlightIcon},
-          {title: 'Code', value: 'code'},
+          // {title: 'Code', value: 'code'},
           {title: 'Underline', value: 'underline'},
           {title: 'Strike', value: 'strike-through'},
         ],
