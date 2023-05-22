@@ -1,4 +1,8 @@
-// import Image from "";
+import js from "refractor/lang/javascript";
+import Refractor from "react-refractor";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+Refractor.registerLanguage(js);
 
 export const RichTextComponents = {
   types: {
@@ -10,6 +14,17 @@ export const RichTextComponents = {
         />
       );
     },
+    code: ({ value }) => (
+      <div className="w-3/4 h-full">
+        <SyntaxHighlighter
+          showLineNumbers
+          language="javascript"
+          style={atomOneDark}
+        >
+          {value.code}
+        </SyntaxHighlighter>
+      </div>
+    ),
   },
   block: {
     h1: ({ children }) => (
@@ -42,6 +57,11 @@ export const RichTextComponents = {
         {children}
       </span>
     ),
+    code: ({ children }) => (
+      <span className="text-white  px-2 rounded py-1 bg-black bg-opacity-60 w-fit h-fit">
+        {children}
+      </span>
+    ),
     link: ({ value, children }) => {
       const target = (value?.href || "").startsWith("http")
         ? "_blank"
@@ -56,16 +76,6 @@ export const RichTextComponents = {
           {children}
         </a>
       );
-    },
-
-    myCodeField: {
-      code: ({ code }) => (
-        <pre className="text-black">
-          <code className="language-javascript">
-            <p>{code}</p>
-          </code>
-        </pre>
-      ),
     },
   },
 };

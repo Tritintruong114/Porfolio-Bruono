@@ -30,6 +30,7 @@
     "react-redux": "^8.0.5",
     "react-refractor": "^2.1.7",
     "react-router-dom": "^6.11.1",
+    "react-syntax-highlighter": "^15.5.0",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {

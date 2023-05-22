@@ -19,21 +19,21 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
-      name: 'tags',
-      type: 'array',
-      title: 'Tags for item',
-      of: [
-        defineArrayMember({
-          type: 'object',
-          name: 'tag',
-          fields: [
-            {type: 'string', name: 'label'},
-            {type: 'string', name: 'value'},
-          ],
-        }),
-      ],
-    }),
+    // defineField({
+    //   name: 'tags',
+    //   type: 'array',
+    //   title: 'Tags for item',
+    //   of: [
+    //     defineArrayMember({
+    //       type: 'object',
+    //       name: 'tag',
+    //       fields: [
+    //         {type: 'string', name: 'label'},
+    //         {type: 'string', name: 'value'},
+    //       ],
+    //     }),
+    //   ],
+    // }),
     defineField({
       name: 'author',
       title: 'Author',

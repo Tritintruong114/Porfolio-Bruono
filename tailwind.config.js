@@ -6,6 +6,7 @@ export default {
     fontFamily: {
       poppins: ["Poppins"],
       handWrite: ["Fasthand"],
+      code: ["Source Code Pro"],
     },
     colors: {
       transparent: "transparent",

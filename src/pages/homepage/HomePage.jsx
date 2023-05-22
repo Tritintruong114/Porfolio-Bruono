@@ -13,17 +13,14 @@ import {
 } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import bruno from "./bruno.pdf";
+import JuniorReactJS from "./JuniorReactJS.pdf";
 import { useDispatch } from "react-redux";
 import { fetchPostsData } from "../../features/fetchDateSlice";
+
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
   const buttons = [
-    {
-      button: "home",
-      icon: <UilEstate />,
-    },
     {
       button: "blogs",
       icon: <UilBloggerAlt />,
@@ -135,12 +132,9 @@ const HomePage = () => {
           <p className="text-xl rounded-xl py-1  text-left w-3/4 ">{`< Front-End-Developer />`}</p>
           <div className=" flex items-start gap-12  w-3/4 pt-6">
             <button className="border hover:bg-white hover:text-persian-900 active:bg-persian-600 active:text-white border-persian-600 px-3 py-1 rounded-xl">
-              <a download href={bruno}>
+              <a download href={JuniorReactJS}>
                 Resume
               </a>
-            </button>
-            <button className="border hover:bg-white hover:text-persian-900 active:bg-persian-600 active:text-white border-persian-600 px-3 py-1 rounded-xl">
-              Porfolio
             </button>
           </div>
         </div>

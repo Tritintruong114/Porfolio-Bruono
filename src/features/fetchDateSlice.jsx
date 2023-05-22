@@ -18,10 +18,10 @@ export const fetchPage = createAsyncThunk("getData/post", async (slug) => {
           "image":image.asset->url,
         },
         publishedAt,
+       categories[]-> ,
         "slug" : slug.current,
         body[]{
           ...,
-           code,
           "imageUrl":asset -> {
           url
         },
@@ -55,7 +55,7 @@ export const fetchPostsData = createAsyncThunk("getData/posts", async () => {
         },
         alt,
       },
-      categories,
+      categories[]-> ,
       body[]{
         style,
         caption,
@@ -87,8 +87,7 @@ export const fetchDataSlice = createSlice({
       })
       .addCase(fetchPostsData.fulfilled, (state, action) => {
         const newPost = action.payload.sort(softDate);
-        // console.log(action.payload);
-        // console.log(newPost.sort(softDate), "Sorted");
+
         state.blogPosts = action.payload;
       })
       .addCase(fetchPostsData.rejected, (state) => {
