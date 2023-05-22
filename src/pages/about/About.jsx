@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import aboutimg from "./aboutimg.jpg";
 const about = {
   value:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+    "I am a software developer, specialising in the web development arena,I have been developing websites using Javascript programming language. Something that I love about software development is the opportunity to work with people from a wide range of disciplines. The software development lifecycle involves working with so many different people and departments and as a people person and someone who loves to build new relationships, it’s great to be able to come together with other professionals who are striving towards the same goal. ",
 };
 const About = () => {
   return (

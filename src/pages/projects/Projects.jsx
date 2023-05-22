@@ -12,7 +12,7 @@ import {
 } from "react-icons/si";
 import { CgScrollV } from "react-icons/cg";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   box3,
   box1,
@@ -20,7 +20,6 @@ import {
   box2,
   box4,
 } from "../../assets/projects/Movie1/index";
-
 import {
   box3 as ms3,
   box1 as ms1,
@@ -28,7 +27,6 @@ import {
   box2 as ms2,
   box4 as ms4,
 } from "../../assets/projects/MusicPlayer/index";
-import image1 from "./image1.png";
 import imageBruno from "./imageBruno.png";
 import elio from "./elio.png";
 const projects = [
@@ -68,7 +66,6 @@ const projects = [
       { database: <SiFirebase /> },
       { state: <SiRedux /> },
     ],
-    // image:
   },
   {
     id: "4",
@@ -103,41 +100,6 @@ const projects = [
   },
 ];
 
-// const useScroll = () => {
-//   const [state, setState] = useState({
-//     x: 0,
-//     y: 0,
-//   });
-//   const onScroll = () => {
-//     setState({ y: window.scrollY, x: window.scrollX });
-//     console.log(window.scrollY);
-//   };
-
-//   useEffect(() => {
-//     window.addEventListener("scroll", onScroll);
-//     return () => window.removeEventListener("scroll", onScroll);
-//   }, []);
-//   return state;
-// };
-
-//folder
-// routing, client render ,
-//client -> UI , static HTML , load first -> UI  .... functional component --> redux , store, config -> server render , state.
-// ES6 code
-// const throttle = (func, delay) => {
-//   let lastCall = 0;
-
-//   return function (...args) {
-//     if (!lastCall) {
-//       lastCall = true;
-//       setTimeout(() => {
-//         lastCall = false;
-//       }, delay);
-//       func(...args);
-//     }
-//   };
-// };
-
 const debounce = (handleFunction, delay) => {
   let timeout;
 
@@ -160,9 +122,7 @@ const Projects = () => {
   const handleScroll = () => {
     const cord = Math.floor(myRef.current.scrollTop) / 730.8;
     setProjectIndex(Math.round(cord));
-    console.log(projectIndex);
   };
-  console.log(projectIndex);
 
   const tHandler = debounce(handleScroll, 100);
   return (
@@ -195,34 +155,22 @@ const Projects = () => {
             <div
               className={`${"bg-thunder-900"} rounded-3xl  xl:row-span-6 gap-3 text-center content-center   h-full w-full flex-shrink-0`}
             >
-              {" "}
               <img
                 className="w-full h-full rounded-3xl  object-cover"
                 src={projects[projectIndex].image.box1}
               ></img>
-            </div>{" "}
-            {/* <div
-              className={`${"bg-thunder-900"}   gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
-            >
-              {" "}
-              <img
-                className="w-full h-full object-cover object-center"
-                src={projects[projectIndex].image.box4}
-              ></img>
-            </div> */}
+            </div>
             <div
               className={`${"bg-thunder-900"} xl:row-span-3 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
-              {" "}
               <img
                 className="w-full h-full rounded-3xl object-cover"
                 src={projects[projectIndex].image.box3}
               ></img>
-            </div>{" "}
+            </div>
             <div
               className={`${"bg-thunder-900"} xl:row-span-3 gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
-              {" "}
               <img
                 className="w-full h-full rounded-3xl object-cover"
                 src={projects[projectIndex].image.box2}
@@ -239,25 +187,7 @@ const Projects = () => {
               src={projects[projectIndex].linkDemo}
             ></iframe>
           </div>
-          {/* <div
-              className={`${"bg-thunder-900"} col-span-1 no-scrollbar row-span-3 overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
-            >
-              <img
-                className="w-full h-full object-cover"
-                src={projects[projectIndex].image.box1}
-              ></img>
-            </div> */}
-          {/* <div
-              className={`${"bg-thunder-900"} col-span-1 row-span-3 no-scrollbar overflow-scroll gap-3 text-center content-center   h-full w-full flex-shrink-0`}
-            >
-              {" "}
-              <img
-                className="w-full h-full "
-                src={projects[projectIndex].image.box4}
-              ></img>
-            </div> */}
         </div>
-        // </div>
       )}
       {projectIndex === 2 && (
         <div className=" p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
@@ -265,7 +195,6 @@ const Projects = () => {
             <div
               className={` col-span-5 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
-              {" "}
               <iframe
                 className="h-full w-full"
                 src={projects[projectIndex]?.linkDemo}
@@ -273,14 +202,13 @@ const Projects = () => {
             </div>
           </div>
         </div>
-      )}{" "}
+      )}
       {projectIndex === 3 && (
         <div className=" p-3 sm:p-6 rounded-t-xl md:rounded-tr-none md:rounded-br-none sm:rounded-l-xl sm:rounded-tr-none sm:rounded-br-none row-span-3 h-full sm:col-span-3 md:col-span-3 xl:col-span-3  flex justify-center items-center">
           <div className="h-full grid-cols-5 grid-rows-6 text-white bg-white gap-3 p-9  rounded-xl w-full grid items-center  justify-center">
             <div
               className={` col-span-5 relative no-scrollbar row-span-6 overflow-scroll gap-3 text-center content-center rounded-3xl  h-full w-full flex-shrink-0`}
             >
-              {" "}
               <img
                 className="w-full h-full object-cover object-left"
                 src={imageBruno}
