@@ -13,7 +13,7 @@ import {
 import { CgScrollV } from "react-icons/cg";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
-import { box2 } from "../../assets/projects/Movie1/index";
+import { box2 } from "../../../assets/projects/Movie1/index";
 import js from "./js.png";
 import css from "./css.png";
 import React from "./React.png";
@@ -22,7 +22,6 @@ import tailwind from "./tailwind.png";
 import firebase from "./firebase.png";
 import sanity from "./sanity.png";
 import router from "./router.png";
-import movie from "./movie.png";
 
 const projects = [
   {
@@ -34,7 +33,7 @@ const projects = [
       style: css,
       frameWork: js,
     },
-    image: box2,
+    image: { box2 },
   },
   {
     id: "2",
@@ -59,7 +58,6 @@ const projects = [
       database: firebase,
       state: redux,
     },
-    image: movie,
   },
   {
     id: "4",
@@ -108,19 +106,17 @@ const Projects = () => {
         return (
           <div
             key={project.id}
-            className="w-full h-96 grid grid-cols-4  rounded-3xl flex-shrink-0 bg-mahogany-500"
+            className="w-full h-96 rounded-3xl flex-shrink-0 bg-mahogany-500"
           >
-            <img
-              className="h-1/2 w-full col-span-4 object-cover object-top rounded-3xl"
-              src={project.image}
-            />
-            <div className="flex items-center  justify-center">
+            <img src={project.image?.box2} />
+            <div className="flex items-center justify-center">
               <img className="h-16" src={project.techStack.frameWork} />
               <img className="h-16" src={project.techStack.style} />
               <img className="h-12" src={project.techStack.router} />
               <img className="h-12" src={project.techStack.database} />
               <img className="h-12" src={project.techStack.state} />
             </div>
+            <h1>{project.project}</h1>
           </div>
         );
       })}
