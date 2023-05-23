@@ -13,7 +13,7 @@ const Post = () => {
   // console.log(RichTextComponents);
   // const { y } = useScroll();
   const { blogId } = useParams();
-  const { post } = useSelector((store) => store.fetchData);
+  const { post } = useSelector((store) => store?.fetchData);
   const dispatch = useDispatch();
 
   useEffect(() => {
