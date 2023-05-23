@@ -4,22 +4,25 @@ import { useEffect } from "react";
 import { PortableText } from "@portabletext/react";
 import { fetchPage } from "../../features/fetchDateSlice";
 import { RichTextComponents } from "../../components/RichTextComponents";
+import { fetchPostsData } from "../../features/fetchDateSlice";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
+
 hljs.registerLanguage("javascript", javascript);
 
 const Post = () => {
-  // console.log(RichTextComponents);
-  // const { y } = useScroll();
   const { blogId } = useParams();
-  const { post } = useSelector((store) => store.fetchData);
+  const { post } = useSelector((store) => store?.fetchData);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchPage(blogId));
-    // console.log(post);
   }, [dispatch, blogId]);
+
+  useEffect(() => {
+    dispatch(fetchPostsData());
+  }, [dispatch]);
 
   useEffect(() => {
     hljs.highlightAll();

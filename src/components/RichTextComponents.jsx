@@ -15,7 +15,7 @@ export const RichTextComponents = {
       );
     },
     code: ({ value }) => (
-      <div className="w-3/4 h-full">
+      <div className="w-3/4 h-full py-3">
         <SyntaxHighlighter
           showLineNumbers
           language="javascript"
@@ -34,13 +34,20 @@ export const RichTextComponents = {
     ),
 
     normal: ({ children }) => (
-      <p className="w-3/4 xl:w-3/4 text-xl py-6 text-black">{children}</p>
+      <p className="w-3/4 xl:w-3/4 text-xl py-3 text-black">{children}</p>
     ),
     h2: ({ children }) => (
-      <h2 className="text-3xl py-3 italic font-bold text-black">{children}</h2>
+      <h2 className="text-3xl w-3/4 py-1 italic font-bold text-black">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl py-1  font-bold text-persian-600">{children}</h3>
+      <h3 className="text-2xl py-1 w-3/4 font-bold text-persian-600">
+        {children}
+      </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-xl font-bold w-3/4">{children}</h4>
     ),
   },
   list: {
@@ -58,7 +65,7 @@ export const RichTextComponents = {
       </span>
     ),
     code: ({ children }) => (
-      <span className="text-white  px-2 rounded py-1 bg-black bg-opacity-60 w-fit h-fit">
+      <span className="text-white px-1 rounded font-code bg-black opacity-30 w-fit h-fit">
         {children}
       </span>
     ),
@@ -68,7 +75,7 @@ export const RichTextComponents = {
         : undefined;
       return (
         <a
-          className="text-blue-600"
+          className="text-black"
           href={value?.href}
           target={target}
           rel={target === "_blank" && "noindex nofollow"}
