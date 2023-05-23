@@ -12,7 +12,7 @@ const Posts = () => {
   }, [dispatch]);
 
   return (
-    <div className="p-9 bg-black h-full text-white w-full">
+    <div className="p-9 relative bg-blue-900 bg-opacity-5 h-full overflow-scroll text-white w-full">
       <div className="absolute left-6 z-30 top-6">
         <Link to="/">
           <button className="p-3 active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white bg-opacity-20 ">

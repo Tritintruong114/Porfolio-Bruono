@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import JuniorReactJS from "./JuniorReactJS.pdf";
 import { useDispatch } from "react-redux";
 import { fetchPostsData } from "../../features/fetchDateSlice";
-
+import background from "./background.jpg";
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
@@ -50,16 +50,6 @@ const HomePage = () => {
       icon: <UilLinkedin />,
       link: "https://www.linkedin.com/in/tin-truong-tri-699b95251/",
     },
-    {
-      name: "Twitter",
-      icon: <UilTwitter />,
-      link: "https://twitter.com/TruongBruno114",
-    },
-    {
-      name: "Insta",
-      icon: <UilInstagramAlt />,
-      link: "https://www.instagram.com/brunotruong114/",
-    },
   ];
 
   useEffect(() => {
@@ -69,8 +59,8 @@ const HomePage = () => {
   return (
     <div className="h-full w-full text-white ">
       <img
-        className="absolute w-full z-0 h-full object-cover"
-        src="https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.15752-9/346105316_114287088332462_4537839571767316912_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=cgBljPQFoq4AX9wN7EX&_nc_ht=scontent.fsgn5-8.fna&oh=03_AdTdAT6oj8C8_Kdg7Z0jLafhypkUZX7Keq8MprTNUgluMw&oe=6489DBAC"
+        className="absolute w-full opacity-90 z-0 h-full object-cover"
+        src={background}
       ></img>
       <div className="flex justify-between w-full relative">
         <div className="flex z-20 w-full gap-3 ">
@@ -130,23 +120,34 @@ const HomePage = () => {
         <div className="m-3 sm:m-24">
           <h1 className="font-bold text-6xl py-3 text-left">Bruno Truong</h1>
           <p className="text-xl rounded-xl py-1  text-left w-3/4 ">{`< Front-End-Developer />`}</p>
-          <div className=" flex items-start gap-12  w-3/4 pt-6">
-            <button className="border hover:bg-white hover:text-persian-900 active:bg-persian-600 active:text-white border-persian-600 px-3 py-1 rounded-xl">
+          <div className="grid sm:flex gap-3 py-3">
+            <div className="bg-white w-fit px-3 italic text-blue-900 font-medium py-1 rounded-3xl">
+              <h1>+ Think organization</h1>
+            </div>{" "}
+            <div className="bg-white w-fit px-3 italic text-blue-900 font-medium py-1 rounded-3xl">
+              <h1>+ Code consistently</h1>
+            </div>
+            <div className="bg-white w-fit px-3 italic text-blue-900 font-medium py-1 rounded-3xl">
+              <h1>+ Positive attitude</h1>
+            </div>
+          </div>
+          <div className=" flex items-center text-center w-3/4 ">
+            <button className="border hover:bg-white hover:text-blue-900 active:bg-persian-600 active:text-white border-blue-900 px-3 py-1 rounded-xl">
               <a download href={JuniorReactJS}>
                 Resume
               </a>
             </button>
+            <div className="flex pl-3 items-center gap-3 justify-center">
+              {contactsIcon.map((icon) => (
+                <button className=" active:text-persian-600" key={icon.name}>
+                  <a rel="noreferrer" href={icon.link} target="_blank">
+                    {icon.icon}
+                  </a>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex absolute bottom-24  z-30 left-3 sm:m-24 gap-3 items-end">
-        {contactsIcon.map((icon) => (
-          <button className=" active:text-persian-600" key={icon.name}>
-            <a rel="noreferrer" href={icon.link} target="_blank">
-              {icon.icon}
-            </a>
-          </button>
-        ))}
       </div>
     </div>
   );
