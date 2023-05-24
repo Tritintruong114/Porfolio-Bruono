@@ -20,11 +20,10 @@ import React from "./React.png";
 import redux from "./redux.png";
 import tailwind from "./tailwind.png";
 import firebase from "./firebase.png";
-import sanity from "./sanity.png";
 import sanity2 from "./sanity2.png";
 import router from "./router.png";
 import movie from "./movie.png";
-
+import html5 from "./html5.png";
 const projects = [
   {
     id: "1",
@@ -34,6 +33,7 @@ const projects = [
     techStack: {
       style: css,
       frameWork: js,
+      router: html5,
     },
     image: box2,
   },
@@ -101,7 +101,7 @@ const Projects = () => {
     <div className="relative bg-white overflow-scroll no-scrollbar gap-9 p-12 pt-24 md:p-24 text-white h-full w-full grid grid-cols-1 xl:grid-cols-2">
       <div className="absolute left-6 z-30 top-6">
         <Link to="/">
-          <button className="p-3 active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-white hover:bg-black bg-opacity-20 ">
+          <button className="p-3 bg-black active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-white hover:bg-black ">
             Back
           </button>
         </Link>
@@ -110,7 +110,7 @@ const Projects = () => {
         return (
           <div
             key={project.id}
-            className="w-full p-3 flex flex-col h-fit bg-white  rounded-3xl flex-shrink-0 bg-wh"
+            className="w-full shadow-2xl p-3 flex flex-col h-fit bg-white  rounded-3xl flex-shrink-0 bg-wh"
           >
             <img
               className="h-96 w-full col-span-4 object-cover object-top rounded-3xl"
@@ -126,7 +126,7 @@ const Projects = () => {
                 src={project.techStack.style}
               />
               <img
-                className="h-9 flex-shrink-0"
+                className="h-12 flex-shrink-0"
                 src={project.techStack.router}
               />
               <img
@@ -139,11 +139,11 @@ const Projects = () => {
               />
               <img
                 className="h-12 flex-shrink-0"
-                src={project.techStack.content}
+                src={project.techStack?.content}
               />
             </div>
             <div>
-              <p className="text-black">This is abc</p>
+              <p className="text-black">{project.project}</p>
             </div>
           </div>
         );

@@ -99,7 +99,7 @@ const HomePage = () => {
               {buttons.map((button) => {
                 return (
                   <div
-                    className="py-3 rounded-xl text-left hover:decoration-white hover:underline w-screen sm:w-1/4  "
+                    className="py-3 rounded-xl text-left hover:decoration-blue-500 decoration-4 hover:underline w-screen sm:w-1/4  "
                     key={button.button}
                   >
                     <Link to={`${button.button}`}>
