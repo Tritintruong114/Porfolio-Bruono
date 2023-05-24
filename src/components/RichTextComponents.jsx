@@ -2,6 +2,7 @@ import js from "refractor/lang/javascript";
 import Refractor from "react-refractor";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 Refractor.registerLanguage(js);
 
 export const RichTextComponents = {
