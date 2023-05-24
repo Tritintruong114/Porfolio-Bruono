@@ -1,29 +1,19 @@
 import { Link } from "react-router-dom";
 import { UilGithub, UilGlobe } from "@iconscout/react-unicons";
-import {
-  SiTailwindcss,
-  SiFirebase,
-  SiReactrouter,
-  SiRedux,
-  SiReact,
-  SiJavascript,
-  SiCss3,
-  SiApacherocketmq,
-} from "react-icons/si";
 import { CgScrollV } from "react-icons/cg";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
 import { box2 } from "../../assets/projects/Movie1/index";
-import js from "./js.png";
-import css from "./css.png";
-import React from "./React.png";
-import redux from "./redux.png";
-import tailwind from "./tailwind.png";
-import firebase from "./firebase.png";
-import sanity2 from "./sanity2.png";
-import router from "./router.png";
-import movie from "./movie.png";
-import html5 from "./html5.png";
+import js from "./asset/js.png";
+import css from "./asset/css.png";
+import React from "./asset/React.png";
+import redux from "./asset/redux.png";
+import tailwind from "./asset/tailwind.png";
+import firebase from "./asset/firebase.png";
+import sanity2 from "./asset/sanity2.png";
+import router from "./asset/router.png";
+import movie from "./asset/movie.png";
+import html5 from "./asset/html5.png";
 const projects = [
   {
     id: "1",
@@ -33,7 +23,7 @@ const projects = [
     techStack: {
       style: css,
       frameWork: js,
-      router: html5,
+      html: html5,
     },
     image: box2,
   },
@@ -98,7 +88,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="relative bg-white overflow-scroll no-scrollbar gap-9 p-12 pt-24 md:p-24 text-white h-full w-full grid grid-cols-1 xl:grid-cols-2">
+    <div className="relative bg-white overflow-scroll no-scrollbar gap-9 p-12 pt-24 md:p-24 text-white h-full w-full grid grid-cols-1 xl:grid-cols-4">
       <div className="absolute left-6 z-30 top-6">
         <Link to="/">
           <button className="p-3 bg-black active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-white hover:bg-black ">
@@ -108,44 +98,78 @@ const Projects = () => {
       </div>
       {projects.map((project) => {
         return (
-          <div
-            key={project.id}
-            className="w-full shadow-2xl p-3 flex flex-col h-fit bg-white  rounded-3xl flex-shrink-0 bg-wh"
-          >
-            <img
-              className="h-96 w-full col-span-4 object-cover object-top rounded-3xl"
-              src={project.image}
-            />
-            <div className="flex sm:justify-center justify-between items-center no-scrollbar py-3 overflow-scroll w-full gap-3 ">
+          <>
+            <div
+              key={project.id}
+              className="w-full xl:col-span-3 shadow-2xl p-3 flex flex-col bg-white  rounded-3xl flex-shrink-0 bg-wh"
+            >
               <img
-                className="h-12 flex-shrink-0"
-                src={project.techStack.frameWork}
-              />
-              <img
-                className="h-12 flex-shrink-0"
-                src={project.techStack.style}
-              />
-              <img
-                className="h-12 flex-shrink-0"
-                src={project.techStack.router}
-              />
-              <img
-                className="h-12 flex-shrink-0"
-                src={project.techStack.database}
-              />
-              <img
-                className="h-12 flex-shrink-0"
-                src={project.techStack.state}
-              />
-              <img
-                className="h-12 flex-shrink-0"
-                src={project.techStack?.content}
+                className="h-full w-full col-span-4 object-cover object-top rounded-3xl"
+                src={project.image}
               />
             </div>
-            <div>
-              <p className="text-black">{project.project}</p>
+            <div className="bg-white h-40 xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
+              <div className="flex sm:justify-center justify-between items-center no-scrollbar py-3 overflow-scroll w-full gap-3 ">
+                <img
+                  className="h-12 flex-shrink-0"
+                  src={project.techStack.frameWork}
+                />
+                <img
+                  className="h-12 flex-shrink-0"
+                  src={project.techStack.style}
+                />{" "}
+                {project.techStack.html && (
+                  <img
+                    className="h-12 flex-shrink-0"
+                    src={project.techStack.html}
+                  />
+                )}
+                {project.techStack.router && (
+                  <img
+                    className="h-9 flex-shrink-0"
+                    src={project.techStack.router}
+                  />
+                )}
+                {project.techStack.database && (
+                  <img
+                    className="h-12 flex-shrink-0"
+                    src={project.techStack.database}
+                  />
+                )}
+                {project.techStack.state && (
+                  <img
+                    className="h-12 flex-shrink-0"
+                    src={project.techStack.state}
+                  />
+                )}
+                {project.techStack.content && (
+                  <img
+                    className="h-12 flex-shrink-0"
+                    src={project.techStack?.content}
+                  />
+                )}
+              </div>{" "}
+              <div className="text-black flex">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={project.linkDemo}
+                >
+                  <UilGlobe />
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={[project.gitHubLink]}
+                >
+                  <UilGithub />
+                </a>
+              </div>
+              <div>
+                <p className="text-black">{project.project}</p>
+              </div>
             </div>
-          </div>
+          </>
         );
       })}
     </div>
