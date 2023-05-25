@@ -14,6 +14,9 @@ import sanity2 from "./asset/sanity2.png";
 import router from "./asset/router.png";
 import movie from "./asset/movie.png";
 import html5 from "./asset/html5.png";
+import music from "./asset/music.png";
+import bruno from "./asset/bruno.png";
+import elio from "./asset/elio.png";
 const projects = [
   {
     id: "1",
@@ -35,6 +38,7 @@ const projects = [
     gitHubLink:
       "https://github.com/Tritintruong114/react-soundCloud/tree/master",
     techStack: { style: tailwind, frameWork: React, router: router },
+    image: music,
   },
   {
     id: "3",
@@ -67,6 +71,7 @@ const projects = [
     },
 
     studio: "https://brunoweb.sanity.studio",
+    image: bruno,
   },
 
   {
@@ -83,15 +88,16 @@ const projects = [
       state: redux,
     },
     studio: "https://elio.sanity.studio/desk/post",
+    image: elio,
   },
 ];
 
 const Projects = () => {
   return (
-    <div className="relative bg-white overflow-scroll no-scrollbar gap-9 p-12 pt-24 md:p-24 text-white h-full w-full grid grid-cols-1 xl:grid-cols-4">
+    <div className="relative bg-background overflow-scroll no-scrollbar gap-9 p-12 pt-24 md:p-24  h-full w-full grid grid-cols-1 xl:grid-cols-4">
       <div className="absolute left-6 z-30 top-6">
         <Link to="/">
-          <button className="p-3 bg-black active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-white hover:bg-black ">
+          <button className="p-3 hover:shadow-xl active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white text-black ">
             Back
           </button>
         </Link>
@@ -101,50 +107,50 @@ const Projects = () => {
           <>
             <div
               key={project.id}
-              className="w-full xl:col-span-3 shadow-2xl p-3 flex flex-col bg-white  rounded-3xl flex-shrink-0 bg-wh"
+              className="w-full xl:col-span-3 shadow-2xl p-6 flex flex-col bg-white  rounded-3xl flex-shrink-0 bg-wh"
             >
               <img
-                className="h-full w-full col-span-4 object-cover object-top rounded-3xl"
+                className="h-96 w-full ojt col-span-4 object-cover rounded-3xl"
                 src={project.image}
               />
             </div>
-            <div className="bg-white h-40 xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
-              <div className="flex sm:justify-center justify-between items-center no-scrollbar py-3 overflow-scroll w-full gap-3 ">
+            <div className=" h-40 bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
+              <div className="flex  justify-between items-center no-scrollbar overflow-scroll w-full gap-3 ">
                 <img
-                  className="h-12 flex-shrink-0"
+                  className="h-9 flex-shrink-0"
                   src={project.techStack.frameWork}
                 />
                 <img
-                  className="h-12 flex-shrink-0"
+                  className="h-9 flex-shrink-0"
                   src={project.techStack.style}
                 />{" "}
                 {project.techStack.html && (
                   <img
-                    className="h-12 flex-shrink-0"
+                    className="h-9 flex-shrink-0"
                     src={project.techStack.html}
                   />
                 )}
                 {project.techStack.router && (
                   <img
-                    className="h-9 flex-shrink-0"
+                    className="h-8 flex-shrink-0"
                     src={project.techStack.router}
                   />
                 )}
                 {project.techStack.database && (
                   <img
-                    className="h-12 flex-shrink-0"
+                    className="h-9 flex-shrink-0"
                     src={project.techStack.database}
                   />
                 )}
                 {project.techStack.state && (
                   <img
-                    className="h-12 flex-shrink-0"
+                    className="h-9 flex-shrink-0"
                     src={project.techStack.state}
                   />
                 )}
                 {project.techStack.content && (
                   <img
-                    className="h-12 flex-shrink-0"
+                    className="h-9 flex-shrink-0"
                     src={project.techStack?.content}
                   />
                 )}
@@ -152,6 +158,7 @@ const Projects = () => {
               <div className="text-black flex">
                 <a
                   target="_blank"
+                  className="h-12"
                   rel="noopener noreferrer"
                   href={project.linkDemo}
                 >

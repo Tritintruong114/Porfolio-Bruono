@@ -16,8 +16,16 @@ import { useEffect, useState } from "react";
 import JuniorReactJS from "./JuniorReactJS.pdf";
 import { useDispatch } from "react-redux";
 import { fetchPostsData } from "../../features/fetchDateSlice";
-import background from "./background.jpg";
 import computer from "./computer.jpg";
+import js from "./asset/js.png";
+import css from "./asset/css.png";
+import reactjs from "./asset/reactjs.png";
+import redux from "./asset/redux.png";
+import tailwind from "./asset/tailwind.png";
+import firebase from "./asset/firebase.png";
+import sanity2 from "./asset/sanity2.png";
+import router from "./asset/router.png";
+import html5 from "./asset/html5.png";
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
@@ -117,12 +125,12 @@ const HomePage = () => {
           )}
         </div>
       </div>
-      <div className="w-full md:ml-12 h-full text-white z-10 absolute flex items-center">
+      <div className="w-full md:pl-12 h-full text-white z-10 absolute flex items-center">
         <div className="m-3 sm:m-24">
-          <h1 className="font-bold w-2/4 xl:w-1/2  text-6xl text-left xl:text-center">
+          <h1 className="font-bold py-3  w-2/4 xl:w-1/2  text-6xl text-left xl:text-center">
             Bruno Truong
           </h1>
-          <p className="text-xl rounded-xl text-left xl:text-center w-full opacity-60 py-3 sm:w-1/2 ">{`<FrontEndDev />`}</p>
+          <p className="text-xl rounded-xl text-left xl:text-center w-full opacity-60 pb-3  sm:w-1/2 ">{`<FrontEndDev />`}</p>
           {/* <div className="grid w-2/4 sm:w-2/4 sm:items-center sm:justify-center gap-3 py-3">
             <div className="bg-white w-fit px-3 italic text-black font-medium py-1 rounded-3xl">
               <h1>+ Think organization</h1>
@@ -134,7 +142,54 @@ const HomePage = () => {
               <h1>+ Open Minded</h1>
             </div>
           </div> */}
-          <div className=" flex  flex-col gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  bg-white bg-opacity-10 backdrop-blur rounded-3xl ">
+          <div className="flex backdrop-blur bg-white bg-opacity-10 rounded-t-3xl py-3 no-scrollbar w-full md:w-3/4 xl:w-1/2 overflow-scroll   items-center xl:justify-center gap-6">
+            <img
+              className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
+              src={tailwind}
+              title="Tailwind CSS - CSS FrameWork"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={sanity2}
+              title="CMS - Sanity"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={firebase}
+              title="Firebase"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={reactjs}
+              title="React JS"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={html5}
+              title="HTML"
+            ></img>{" "}
+            <img
+              className="h-7 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={router}
+              title="React Router Dom"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={js}
+              title="Javascript"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={css}
+              title="CSS"
+            ></img>
+            <img
+              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+              src={redux}
+              title="Redux"
+            ></img>
+          </div>
+          <div className=" flex  flex-col gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  bg-white bg-opacity-10 backdrop-blur rounded-b-3xl ">
             <p className="w-3/4 pt-3">
               Hi there, welcome to my personal website.
               <br /> As a FrontEnd Developer, patience and passion are my

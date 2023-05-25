@@ -9,6 +9,7 @@ export default {
       code: ["Source Code Pro"],
     },
     colors: {
+      background: "#EEEEEE",
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
