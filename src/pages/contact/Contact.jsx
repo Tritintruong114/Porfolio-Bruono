@@ -3,7 +3,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { userSchema } from "../../Validations/UserValidation";
-import { Link } from "react-router-dom";
 import { BackButton } from "../../components/BackButton";
 
 const Contact = () => {
@@ -49,7 +48,7 @@ const Contact = () => {
 
           <button
             onClick={notify}
-            className="h-fit rounded-3xl px-6 py-2 bg-mahogany-200 w-fit"
+            className="h-fit rounded-3xl px-6 py-2 font-bold bg-teal hover:text-background  text-black text-opacity-60 w-fit"
           >
             Send
           </button>
