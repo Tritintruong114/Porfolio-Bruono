@@ -13,7 +13,7 @@ import {
 } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import JuniorReactJS from "./JuniorReactJS.pdf";
+import brunoTruong from "./brunoTruong.pdf";
 import { useDispatch } from "react-redux";
 import { fetchPostsData } from "../../features/fetchDateSlice";
 import computer from "./computer.jpg";
@@ -142,7 +142,7 @@ const HomePage = () => {
               <h1>+ Open Minded</h1>
             </div>
           </div> */}
-          <div className="flex backdrop-blur bg-white bg-opacity-10 rounded-t-3xl py-3 no-scrollbar w-full md:w-3/4 xl:w-1/2 overflow-scroll   items-center xl:justify-center gap-6">
+          <div className="flex md:justify-center  pt-3 bg-white bg-opacity-10  rounded-t-3xl no-scrollbar w-full md:w-3/4 xl:w-1/2 overflow-scroll   items-center xl:justify-center justify-between gap-3 xl:gap-6">
             <img
               className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
               src={tailwind}
@@ -189,7 +189,7 @@ const HomePage = () => {
               title="Redux"
             ></img>
           </div>
-          <div className=" flex  flex-col gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  bg-white bg-opacity-10 backdrop-blur rounded-b-3xl ">
+          <div className=" flex  flex-col   bg-white bg-opacity-10 gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  rounded-b-3xl ">
             <p className="w-3/4 pt-3">
               Hi there, welcome to my personal website.
               <br /> As a FrontEnd Developer, patience and passion are my
@@ -198,13 +198,15 @@ const HomePage = () => {
             </p>
             <div>
               <button className="border hover:bg-white hover:text-blue-900 active:bg-persian-600 active:text-white border-blue-900 px-3 py-1 rounded-xl">
-                <a download href={JuniorReactJS}>
+                <a download href={brunoTruong}>
                   Resume
                 </a>
               </button>{" "}
-              <button className="border hover:bg-white hover:text-blue-900 active:bg-persian-600 active:text-white border-blue-900 px-3 py-1 rounded-xl">
-                Let's talk
-              </button>
+              <Link to="/contact">
+                <button className="border hover:bg-white hover:text-blue-900 active:bg-persian-600 active:text-white border-blue-900 px-3 py-1 rounded-xl">
+                  Let's talk
+                </button>
+              </Link>
               <div className="flex pl-3 items-center pt-3 pb-3 gap-3 justify-center">
                 {contactsIcon.map((icon) => (
                   <button className=" active:text-persian-600" key={icon.name}>

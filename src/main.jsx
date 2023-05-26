@@ -10,6 +10,7 @@ import Post from "./pages/posts/Post.jsx";
 import HomePage from "./pages/homepage/HomePage.jsx";
 import About from "./pages/about/About.jsx";
 import Projects from "./pages/projects/Projects.jsx";
+import Contact from "./pages/contact/Contact.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "blogs/:blogId",
         element: <Post />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },

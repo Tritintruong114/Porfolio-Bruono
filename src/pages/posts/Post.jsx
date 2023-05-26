@@ -39,12 +39,11 @@ const Post = () => {
       </div>
       <>
         <PortableText value={post?.body} components={RichTextComponents} />
-        <div className="mb-20 bg-white rounded-3xl h-40 w-3/4 flex items-center justify-center">
+        {/* <div className="mb-20 bg-white rounded-3xl h-40 w-3/4 flex items-center justify-center">
           <h1 className="text-6xl font-medium font-handWrite">
             {post.author?.name}
           </h1>
-          {/* <img className="h-1/2 rounded-full" src={post.author?.image}></img> */}
-        </div>
+        </div> */}
       </>
     </div>
   );
