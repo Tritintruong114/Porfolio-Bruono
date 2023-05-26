@@ -1,38 +1,61 @@
 import handshake1 from "./handshake1.webp";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import { userSchema } from "../../Validations/UserValidation";
+import { Link } from "react-router-dom";
+import { BackButton } from "../../components/BackButton";
 
 const Contact = () => {
-  const notify = () => toast("Wow so easy!");
+  const [email, setEmail] = useState("");
+
+  const notify = async () => {
+    let formData = {
+      email,
+    };
+    const isValid = await userSchema.isValid(formData);
+    if (isValid == true) {
+      setEmail("");
+      toast.success("Thank you for making contact!");
+    } else toast.error("Email invalid!");
+  };
   return (
-    <div className="sm:grid flex shadow-2xl flex-col sm:grid-cols-4">
-      <div className="p-9 col-span-3 w-full h-full">
+    <div className="sm:grid bg-background rounded-3xl flex shadow-2xl flex-col sm:grid-cols-4">
+      <BackButton />
+      <div className=" p-6 col-span-3">
+        <h1 className="flex xl:text-4xl py-3 font-bold items-center justify-center">
+          Let's work together!
+        </h1>
         <img
           title="https://dribbble.com/shots/5338247-Handshake-Icon"
-          className="object-cover w-full h-full"
+          className="rounded-3xl"
           src={handshake1}
         ></img>
       </div>
-
       <div>
-        <div className="col-span-1  w-full h-full items-center pt-9 pr-9 pb-9  gap-3  flex flex-col">
+        <div className="col-span-1  w-full h-full items-center sm:pt-9 sm:pr-9 sm:pb-9 p-9  gap-3  flex flex-col">
           <input
-            className="h-fit focus:outline-none py-6 pl-3 w-full"
-            placeholder="yourmail@.gmai.com"
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            className="h-fit rounded-3xl focus:outline-none py-3 pl-3 w-full"
+            placeholder="yourmail@.gmail.com"
+            value={email}
           ></input>
 
           <textarea
-            className="h-full focus:outline-none  py-6 pl-3  w-full align-top"
+            className="h-full rounded-3xl focus:outline-none  py-6 pl-3  w-full align-top"
             placeholder="Say something"
           ></textarea>
 
           <button
             onClick={notify}
-            className="h-fit px-6 py-2 bg-mahogany-200 w-fit"
+            className="h-fit rounded-3xl px-6 py-2 bg-mahogany-200 w-fit"
           >
             Send
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

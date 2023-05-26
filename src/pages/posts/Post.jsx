@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { PortableText } from "@portabletext/react";
@@ -8,6 +8,7 @@ import { fetchPostsData } from "../../features/fetchDateSlice";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
+import { BackButton } from "../../components/BackButton";
 
 hljs.registerLanguage("javascript", javascript);
 
@@ -29,23 +30,18 @@ const Post = () => {
   }, []);
 
   return (
-    <div className=" w-5/6 h-full overflow-scroll no-scrollbar my-3 relative bg-white shadow-2xl rounded-3xl pt-12 flex flex-col  items-center">
-      <div className="absolute left-6 z-30 top-6">
-        <Link to="/blogs">
-          <button className="p-3 active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-white hover:bg-black bg-opacity-20 ">
+    <>
+      <div className="sm:absolute left-6 z-30 top-6">
+        <Link to="/">
+          <button className="p-3 bg-background active:bg-background hover:shadow-xl active:text-persian-600  font-bold text-xl capitalize  rounded-xl  hover:text-black ">
             Back
           </button>
         </Link>
       </div>
-      <>
+      <div className=" w-5/6 bg-background h-full overflow-scroll no-scrollbar my-3 relative bg-white shadow-2xl rounded-3xl pt-12 flex flex-col  items-center">
         <PortableText value={post?.body} components={RichTextComponents} />
-        {/* <div className="mb-20 bg-white rounded-3xl h-40 w-3/4 flex items-center justify-center">
-          <h1 className="text-6xl font-medium font-handWrite">
-            {post.author?.name}
-          </h1>
-        </div> */}
-      </>
-    </div>
+      </div>
+    </>
   );
 };
 

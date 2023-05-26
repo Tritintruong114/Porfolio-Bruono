@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="font-poppins overflow-scroll justify-center items-center bg-background   flex flex-col w-screen h-screen">
+    <div className="font-poppins bg-teal justify-center items-center   flex flex-col w-screen h-screen">
       <Outlet />
     </div>
   );

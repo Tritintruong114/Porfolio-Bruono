@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPostsData } from "../../features/fetchDateSlice";
 import { Link } from "react-router-dom";
+import { BackButton } from "../../components/BackButton";
 
 const Posts = () => {
   const { blogPosts } = useSelector((store) => store.fetchData);
@@ -12,16 +13,10 @@ const Posts = () => {
   }, [dispatch]);
 
   return (
-    <div className="p-9 relative  h-full overflow-scroll text-white w-full">
-      <div className="absolute left-6 z-30 top-6">
-        <Link to="/">
-          <button className="p-3 hover:shadow-xl text-black active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white bg-opacity-20 ">
-            Back
-          </button>
-        </Link>
-      </div>
+    <div className="p-9 relative no-scrollbar bg-teal h-full overflow-scroll text-white w-full">
+      <BackButton />
       <div className="w-full xl:px-48 md:px-24 px-12 flex flex-col gap-6 mt-24 md:grid grid-cols-1 md:grid-cols-2">
-        <div className="col-span-2 shadow-2xl rounded-3xl sm:visible invisible absolute sm:relative">
+        <div className="col-span-2 bg-background shadow-2xl rounded-3xl sm:visible invisible absolute sm:relative">
           {blogPosts[0].mainImage?.asset?.url && (
             <div
               className="text-center rounded-3xl flex flex-col items-center justify-center bg-white text-black"
@@ -61,7 +56,7 @@ const Posts = () => {
           return (
             <>
               <div
-                className="text-center  shadow-2xl rounded-3xl flex flex-col items-center justify-center bg-white text-black"
+                className="text-center bg-background  shadow-2xl rounded-3xl flex flex-col items-center justify-center bg-white text-black"
                 key={post?.title}
               >
                 <div className="h-full w-full p-6">

@@ -1,8 +1,4 @@
-import { Link } from "react-router-dom";
 import { UilGithub, UilGlobe } from "@iconscout/react-unicons";
-import { CgScrollV } from "react-icons/cg";
-import { IoArrowBackCircleOutline } from "react-icons/io5";
-import { useEffect, useRef, useState } from "react";
 import { box2 } from "../../assets/projects/Movie1/index";
 import js from "./asset/js.png";
 import css from "./asset/css.png";
@@ -17,6 +13,7 @@ import html5 from "./asset/html5.png";
 import music from "./asset/music.png";
 import bruno from "./asset/bruno.png";
 import elio from "./asset/elio.png";
+import { BackButton } from "../../components/BackButton";
 const projects = [
   {
     id: "1",
@@ -29,6 +26,9 @@ const projects = [
       html: html5,
     },
     image: box2,
+    info: {
+      text: "Using Javacript for the function of the application, and styled with Css. This project for learning the Javascript fundamental.",
+    },
   },
   {
     id: "2",
@@ -39,6 +39,9 @@ const projects = [
       "https://github.com/Tritintruong114/react-soundCloud/tree/master",
     techStack: { style: tailwind, frameWork: React, router: router },
     image: music,
+    info: {
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS.",
+    },
   },
   {
     id: "3",
@@ -55,6 +58,9 @@ const projects = [
       state: redux,
     },
     image: movie,
+    info: {
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user",
+    },
   },
   {
     id: "4",
@@ -64,10 +70,12 @@ const projects = [
     techStack: {
       style: tailwind,
       frameWork: React,
-      database: firebase,
       router: router,
       content: sanity2,
       state: redux,
+    },
+    info: {
+      text: "Using React JS for base, React Router Dom for navigate user, and styled with Tailwind Css and Sanity Studio for CMS module with CRUD features, Redux for the state management.",
     },
 
     studio: "https://brunoweb.sanity.studio",
@@ -89,33 +97,37 @@ const projects = [
     },
     studio: "https://elio.sanity.studio/desk/post",
     image: elio,
+    info: {
+      text: "Using React JS for base, React Router Dom for navigate user, and styled with Tailwind Css and Sanity Studio for CMS module with CRUD features, Redux for the state management. Firebase.",
+    },
   },
 ];
 
 const Projects = () => {
   return (
-    <div className="relative bg-background overflow-scroll no-scrollbar gap-9 p-12 pt-24 md:p-24  h-full w-full grid grid-cols-1 xl:grid-cols-4">
-      <div className="absolute left-6 z-30 top-6">
-        <Link to="/">
-          <button className="p-3 hover:shadow-xl active:bg-persian-600 active:text-white  font-bold text-xl capitalize  rounded-xl  hover:text-black hover:bg-white text-black ">
-            Back
-          </button>
-        </Link>
-      </div>
+    <div className="relative bg-teal overflow-scroll no-scrollbar gap-9 p-3 md:p-24  h-full w-full grid grid-cols-1 xl:grid-cols-4">
+      <BackButton />
       {projects.map((project) => {
         return (
           <>
             <div
               key={project.id}
-              className="w-full xl:col-span-3 shadow-2xl p-6 flex flex-col bg-white  rounded-3xl flex-shrink-0 bg-wh"
+              className="w-full  bg-background xl:col-span-3 shadow-2xl p-6 flex flex-col bg-white  rounded-3xl flex-shrink-0 bg-wh"
             >
-              <img
-                className="h-96 w-full ojt col-span-4 object-cover rounded-3xl"
-                src={project.image}
-              />
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.linkDemo}
+                title={project.project}
+              >
+                <img
+                  className="h-96 w-full ojt col-span-4 object-cover rounded-3xl"
+                  src={project.image}
+                />
+              </a>
             </div>
-            <div className=" h-40 bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
-              <div className="flex  justify-between items-center no-scrollbar overflow-scroll w-full gap-3 ">
+            <div className=" h-60 bg-background no-scrollbar overflow-scroll bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
+              <div className="flex justify-between items-center no-scrollbar overflow-scroll w-full gap-3 ">
                 <img
                   className="h-9 flex-shrink-0"
                   src={project.techStack.frameWork}
@@ -155,25 +167,29 @@ const Projects = () => {
                   />
                 )}
               </div>{" "}
-              <div className="text-black flex">
+              <div>
+                <h1 className="text-black font-bold pt-6 text-xl">
+                  {project.project}
+                </h1>
+                <p className="w-full h-full py-6">{project.info.text}</p>
+              </div>
+              <div className="text-black py-6 gap-6 flex items-center w-full justify-center">
                 <a
                   target="_blank"
-                  className="h-12"
                   rel="noopener noreferrer"
                   href={project.linkDemo}
+                  title="Demo"
                 >
-                  <UilGlobe />
+                  <UilGlobe size="42" />
                 </a>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={[project.gitHubLink]}
+                  title="Source code"
                 >
-                  <UilGithub />
+                  <UilGithub size="42" />
                 </a>
-              </div>
-              <div>
-                <p className="text-black">{project.project}</p>
               </div>
             </div>
           </>

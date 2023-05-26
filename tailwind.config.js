@@ -10,9 +10,9 @@ export default {
     },
     colors: {
       background: "#EEEEEE",
-      transparent: "transparent",
-      current: "currentColor",
-      white: "#ffffff",
+
+      teal: "#a6a1a7",
+
       black: "#0a0a0a",
       mahogany: {
         50: "#fff3ec",

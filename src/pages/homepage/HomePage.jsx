@@ -1,5 +1,4 @@
 import {
-  UilEstate,
   UilBloggerAlt,
   UilFolder,
   UilUser,
@@ -8,8 +7,6 @@ import {
   UilGithub,
   UilDribbble,
   UilLinkedin,
-  UilTwitter,
-  UilInstagramAlt,
 } from "@iconscout/react-unicons";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -66,11 +63,12 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="h-full w-full text-white ">
+    <div className="h-full w-full text-background ">
       <img
-        className="absolute blur-sm object-cover h-full w-full z-0"
+        className="absolute object-cover h-full w-full z-0"
         src={computer}
       ></img>
+      <div className="h-full w-full absolute backdrop-blur-sm"></div>
       <div className="flex justify-between w-full relative">
         <div className="flex z-20 w-full gap-3 ">
           <div className="sm:hidden z-30 absolute right-3 top-3 ">
@@ -89,7 +87,7 @@ const HomePage = () => {
               {buttons.map((button) => {
                 return (
                   <div
-                    className="py-3 backdrop:blur-2xl rounded-xl  hover:text-black hover:bg-white bg-opacity-20 w-screen sm:w-1/4  "
+                    className="py-3 backdrop:blur-2xl rounded-xl  hover:text-black hover:bg-background bg-opacity-20 w-screen sm:w-1/4  "
                     key={button.button}
                   >
                     <h1
@@ -125,7 +123,7 @@ const HomePage = () => {
           )}
         </div>
       </div>
-      <div className="w-full md:pl-12 h-full text-white z-10 absolute flex items-center">
+      <div className="w-full md:pl-12 h-full text-background z-10 absolute flex items-center">
         <div className="m-3 sm:m-24">
           <h1 className="font-bold py-3  w-2/4 xl:w-1/2  text-6xl text-left xl:text-center">
             Bruno Truong
@@ -142,7 +140,7 @@ const HomePage = () => {
               <h1>+ Open Minded</h1>
             </div>
           </div> */}
-          <div className="flex md:justify-center  pt-3 bg-white bg-opacity-10  rounded-t-3xl no-scrollbar w-full md:w-3/4 xl:w-1/2 overflow-scroll   items-center xl:justify-center justify-between gap-3 xl:gap-6">
+          <div className="flex md:justify-center  py-3 bg-background bg-opacity-10  rounded-t-3xl no-scrollbar w-full md:w-3/4 xl:w-1/2 overflow-scroll   items-center xl:justify-center justify-between gap-3 xl:gap-6">
             <img
               className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
               src={tailwind}
@@ -189,7 +187,7 @@ const HomePage = () => {
               title="Redux"
             ></img>
           </div>
-          <div className=" flex  flex-col   bg-white bg-opacity-10 gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  rounded-b-3xl ">
+          <div className=" flex  flex-col   bg-background bg-opacity-10 gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  rounded-b-3xl ">
             <p className="w-3/4 pt-3">
               Hi there, welcome to my personal website.
               <br /> As a FrontEnd Developer, patience and passion are my
@@ -197,13 +195,13 @@ const HomePage = () => {
               those, everything is possible.
             </p>
             <div>
-              <button className="border hover:bg-white hover:text-blue-900 active:bg-persian-600 active:text-white border-blue-900 px-3 py-1 rounded-xl">
+              <button className="border hover:bg-background hover:text-background active:bg-persian-600 hover:bg-opacity-10 active:text-background border-persian-600 px-3 py-1 rounded-xl">
                 <a download href={brunoTruong}>
                   Resume
                 </a>
               </button>{" "}
               <Link to="/contact">
-                <button className="border hover:bg-white hover:text-blue-900 active:bg-persian-600 active:text-white border-blue-900 px-3 py-1 rounded-xl">
+                <button className="border hover:bg-background hover:text-background active:bg-persian-600 hover:bg-opacity-10 active:text-background border-persian-600 px-3 py-1 rounded-xl">
                   Let's talk
                 </button>
               </Link>
