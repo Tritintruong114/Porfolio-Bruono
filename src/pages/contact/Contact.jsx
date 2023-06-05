@@ -7,6 +7,7 @@ import { BackButton } from "../../components/BackButton";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
+  const [textArea, setTextArea] = useState("");
 
   const notify = async () => {
     let formData = {
@@ -15,6 +16,7 @@ const Contact = () => {
     const isValid = await userSchema.isValid(formData);
     if (isValid == true) {
       setEmail("");
+      setTextArea("");
       toast.success("Thank you for making contact!");
     } else toast.error("Email invalid!");
   };
@@ -42,6 +44,8 @@ const Contact = () => {
           ></input>
 
           <textarea
+            value={textArea}
+            onChange={(e) => setTextArea(e.target.value)}
             className="h-full rounded-3xl focus:outline-none  py-6 pl-3  w-full align-top"
             placeholder="Say something"
           ></textarea>
