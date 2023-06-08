@@ -13,34 +13,25 @@ import html5 from "./asset/html5.png";
 import music from "./asset/music.png";
 import bruno from "./asset/bruno.png";
 import elio from "./asset/elio.png";
+import maison from "./asset/maison.png";
 import { BackButton } from "../../components/BackButton";
 const projects = [
   {
     id: "1",
-    project: "Movie Dashboard",
-    linkDemo: "https://sfcpj2.csb.app/",
-    gitHubLink: "https://github.com/Tritintruong114/Netflix-Clone-DashBoard",
+    project: "Maison De Villa",
+    linkDemo: "https://maison-de-villa.vercel.app/",
+    gitHubLink: "https://github.com/Tritintruong114/Maison-De-Villa",
     techStack: {
-      style: css,
-      frameWork: js,
-      html: html5,
+      style: tailwind,
+      frameWork: React,
+      router: router,
+      database: firebase,
+      state: redux,
+      content: sanity2,
     },
-    image: box2,
+    image: maison,
     info: {
-      text: "Using Javacript for the function of the application, and styled with Css. This project for learning the Javascript fundamental.",
-    },
-  },
-  {
-    id: "2",
-    project: "Music Player",
-    desc: "Live preview",
-    linkDemo: "https://master--voluble-otter-f2f9c8.netlify.app/",
-    gitHubLink:
-      "https://github.com/Tritintruong114/react-soundCloud/tree/master",
-    techStack: { style: tailwind, frameWork: React, router: router },
-    image: music,
-    info: {
-      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS.",
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user, Implement AI MidJourney for generating IMG and focus on the Core Customer",
     },
   },
   {
@@ -81,26 +72,6 @@ const projects = [
     studio: "https://brunoweb.sanity.studio",
     image: bruno,
   },
-
-  {
-    id: "5",
-    project: "Elio Trader",
-    linkDemo: "https://elio-personal-website.vercel.app/",
-    gitHubLink: "https://github.com/Tritintruong114/project-ellio",
-    techStack: {
-      style: tailwind,
-      frameWork: React,
-      database: firebase,
-      router: router,
-      content: sanity2,
-      state: redux,
-    },
-    studio: "https://elio.sanity.studio/desk/post",
-    image: elio,
-    info: {
-      text: "Using React JS for base, React Router Dom for navigate user, and styled with Tailwind Css and Sanity Studio for CMS module with CRUD features, Redux for the state management. Firebase.",
-    },
-  },
 ];
 
 const Projects = () => {
@@ -116,12 +87,13 @@ const Projects = () => {
             >
               <a
                 target="_blank"
+                className="h-fulll"
                 rel="noopener noreferrer"
                 href={project.linkDemo}
                 title={project.project}
               >
                 <img
-                  className="h-96 w-full ojt col-span-4 object-cover rounded-3xl"
+                  className="h-full w-full rounded-3xl"
                   src={project.image}
                 />
               </a>

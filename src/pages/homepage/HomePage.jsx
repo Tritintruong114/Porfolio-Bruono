@@ -54,7 +54,7 @@ const HomePage = () => {
     {
       name: "Linkedin",
       icon: <UilLinkedin />,
-      link: "https://www.linkedin.com/in/tin-truong-tri-699b95251/",
+      link: "https://www.linkedin.com/in/tin-truong-699b95251/",
     },
   ];
 
@@ -194,17 +194,15 @@ const HomePage = () => {
               strength, creativity and quick learning are my hobbies. And with
               those, everything is possible.
             </p>
-            <div>
-              <button className="border hover:bg-background hover:text-background active:bg-persian-600 hover:bg-opacity-10 active:text-background border-persian-600 px-3 py-1 rounded-xl">
+            <div className="flex gap-3 flex-col w-full justify-center items-center">
+              <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
                 <a download href={brunoTruong}>
                   Resume
                 </a>
               </button>{" "}
-              <Link to="/contact">
-                <button className="border hover:bg-background hover:text-background active:bg-persian-600 hover:bg-opacity-10 active:text-background border-persian-600 px-3 py-1 rounded-xl">
-                  Let's talk
-                </button>
-              </Link>
+              <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background  px-3 py-1 rounded-xl">
+                <Link to="/contact">Let's talk</Link>
+              </button>
               <div className="flex pl-3 items-center pt-3 pb-3 gap-3 justify-center">
                 {contactsIcon.map((icon) => (
                   <button className=" active:text-persian-600" key={icon.name}>
