@@ -54,7 +54,7 @@ const HomePage = () => {
     {
       name: "Linkedin",
       icon: <UilLinkedin />,
-      link: "https://www.linkedin.com/in/tin-truong-699b95251/",
+      link: "https://www.linkedin.com/in/truongtritin-bruno/",
     },
   ];
 
