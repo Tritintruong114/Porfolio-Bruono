@@ -8,9 +8,9 @@ import {
   UilDribbble,
   UilLinkedin,
 } from "@iconscout/react-unicons";
+import FrontEndDeveloper from "./FrontEndDeveloper.pdf";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import brunoTruong from "./brunoTruong.pdf";
 import { useDispatch } from "react-redux";
 import { fetchPostsData } from "../../features/fetchDateSlice";
 import computer from "./computer.jpg";
@@ -195,14 +195,16 @@ const HomePage = () => {
               those, everything is possible.
             </p>
             <div className="flex gap-3 flex-col w-full justify-center items-center">
-              <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
-                <a download href={brunoTruong}>
-                  Resume
-                </a>
-              </button>{" "}
-              <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background  px-3 py-1 rounded-xl">
-                <Link to="/contact">Let's talk</Link>
-              </button>
+              <div className="flex h-12 text-xl font-bold w-full px-6 gap-3">
+                <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
+                  <a download href={FrontEndDeveloper}>
+                    Resume
+                  </a>
+                </button>{" "}
+                <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background  px-3 py-1 rounded-xl">
+                  <Link to="/contact">Let's talk</Link>
+                </button>
+              </div>
               <div className="flex pl-3 items-center pt-3 pb-3 gap-3 justify-center">
                 {contactsIcon.map((icon) => (
                   <button className=" active:text-persian-600" key={icon.name}>

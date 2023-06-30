@@ -1,7 +1,4 @@
 import { UilGithub, UilGlobe } from "@iconscout/react-unicons";
-import { box2 } from "../../assets/projects/Movie1/index";
-import js from "./asset/js.png";
-import css from "./asset/css.png";
 import React from "./asset/React.png";
 import redux from "./asset/redux.png";
 import tailwind from "./asset/tailwind.png";
@@ -9,10 +6,7 @@ import firebase from "./asset/firebase.png";
 import sanity2 from "./asset/sanity2.png";
 import router from "./asset/router.png";
 import movie from "./asset/movie.png";
-import html5 from "./asset/html5.png";
-import music from "./asset/music.png";
 import bruno from "./asset/bruno.png";
-import elio from "./asset/elio.png";
 import maison from "./asset/maison.png";
 import iphone from "./asset/iphone.png";
 import threejs from "./asset/threejs.png";
