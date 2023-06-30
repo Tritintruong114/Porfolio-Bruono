@@ -14,8 +14,49 @@ import music from "./asset/music.png";
 import bruno from "./asset/bruno.png";
 import elio from "./asset/elio.png";
 import maison from "./asset/maison.png";
+import iphone from "./asset/iphone.png";
+import threejs from "./asset/threejs.png";
+import gsap from "./asset/gsap.png";
+import trackit from "./asset/trackit.png";
 import { BackButton } from "../../components/BackButton";
 const projects = [
+  {
+    id: "123",
+    project: "Trackit",
+    linkDemo: "https://iphone-3d-website-starter-main.vercel.app/",
+    gitHubLink:
+      "https://github.com/Tritintruong114/iphone-3d-website-starter-main",
+    techStack: {
+      style: tailwind,
+      frameWork: React,
+      router: router,
+      database: firebase,
+      state: redux,
+      content: sanity2,
+    },
+    image: trackit,
+    info: {
+      text: "The task tracker app is simple and easy to use, with a clean and modern design. The use of React JS is apparent, with the app being fast and responsive, and the state management being handled efficiently.",
+    },
+  },
+  {
+    id: "5",
+    project: "Iphone 3D Module",
+    linkDemo: "https://iphone-3d-website-starter-main.vercel.app/",
+    gitHubLink:
+      "https://github.com/Tritintruong114/iphone-3d-website-starter-main",
+    techStack: {
+      frameWork: threejs,
+      style: gsap,
+      state: redux,
+      router: router,
+      database: tailwind,
+    },
+    image: iphone,
+    info: {
+      text: "Moved on to designing the 3D model of the iPhone using Three.js, paying attention to the details and ensuring that the model was as realistic as possible. Deployed the web project to a hosting platform as Vercel",
+    },
+  },
   {
     id: "1",
     project: "Maison De Villa",
@@ -98,7 +139,10 @@ const Projects = () => {
                 />
               </a>
             </div>
-            <div className=" h-60 bg-background no-scrollbar overflow-scroll bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
+            <div className=" h-60 bg-background flex flex-col items-center justify-center no-scrollbar overflow-scroll bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
+              <h1 className="text-black w-full font-bold pt-6 text-3xl pb-9">
+                {project.project}
+              </h1>
               <div className="flex justify-between items-center no-scrollbar overflow-scroll w-full gap-3 ">
                 <img
                   className="h-9 flex-shrink-0"
@@ -140,9 +184,6 @@ const Projects = () => {
                 )}
               </div>{" "}
               <div>
-                <h1 className="text-black font-bold pt-6 text-xl">
-                  {project.project}
-                </h1>
                 <p className="w-full h-full py-6">{project.info.text}</p>
               </div>
               <div className="text-black py-6 gap-6 flex items-center w-full justify-center">
