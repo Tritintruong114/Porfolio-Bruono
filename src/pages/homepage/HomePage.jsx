@@ -8,7 +8,7 @@ import {
   UilDribbble,
   UilLinkedin,
 } from "@iconscout/react-unicons";
-import FrontEndDeveloper from "./FrontEndDeveloper.pdf";
+import FrontEndDev from "./FrontEndDev.pdf";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -197,7 +197,7 @@ const HomePage = () => {
             <div className="flex gap-3 flex-col w-full justify-center items-center">
               <div className="flex h-12 text-xl font-bold w-full px-6 gap-3">
                 <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
-                  <a download href={FrontEndDeveloper}>
+                  <a download href={FrontEndDev}>
                     Resume
                   </a>
                 </button>{" "}
