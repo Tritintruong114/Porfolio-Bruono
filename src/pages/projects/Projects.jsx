@@ -12,14 +12,34 @@ import iphone from "./asset/iphone.png";
 import threejs from "./asset/threejs.png";
 import gsap from "./asset/gsap.png";
 import trackit from "./asset/trackit.png";
+import wooder from "./asset/wooder.png";
+import js from "./asset/js.png"
+import sass from "./asset/sass.png"
 import { BackButton } from "../../components/BackButton";
 const projects = [
   {
+    id: "1234",
+    project: "Wooder",
+    linkDemo: "https://wooder2-grunt.vercel.app",
+    gitHubLink:
+      "https://github.com/Tritintruong114/Wooder-Final",
+    techStack: {
+      style: sass,
+      frameWork: js,
+    },
+    status: true,
+    image: wooder,
+    info: {
+      text: "Wooder was built for the sass best practice with responsive for mobile, compile working with Figma and Photoshop. This project was built by Javascript and HTML , Scss.",
+    },
+  },
+  {
     id: "123",
     project: "Trackit",
-    linkDemo: "https://iphone-3d-website-starter-main.vercel.app/",
+    linkDemo: "https://task-tracker-reactjs-2.vercel.app/",
     gitHubLink:
-      "https://github.com/Tritintruong114/iphone-3d-website-starter-main",
+      "https://github.com/Tritintruong114/task-tracker-reactjs-2.git",
+    status: false,
     techStack: {
       style: tailwind,
       frameWork: React,
@@ -39,6 +59,7 @@ const projects = [
     linkDemo: "https://iphone-3d-website-starter-main.vercel.app/",
     gitHubLink:
       "https://github.com/Tritintruong114/iphone-3d-website-starter-main",
+    status: true,
     techStack: {
       frameWork: threejs,
       style: gsap,
@@ -56,6 +77,7 @@ const projects = [
     project: "Maison De Villa",
     linkDemo: "https://maison-de-villa.vercel.app/",
     gitHubLink: "https://github.com/Tritintruong114/Maison-De-Villa",
+    status: true,
     techStack: {
       style: tailwind,
       frameWork: React,
@@ -75,7 +97,7 @@ const projects = [
     linkDemo: "https://iridescent-taffy-0e81cb.netlify.app/",
     gitHubLink: "https://github.com/Tritintruong114/Movie-Dashboard",
     desc: "Live preview",
-
+    status: true,
     techStack: {
       style: tailwind,
       frameWork: React,
@@ -93,6 +115,7 @@ const projects = [
     project: "Bruno Website",
     linkDemo: "https://porfolio-bruono.vercel.app/",
     gitHubLink: "https://github.com/Tritintruong114/Porfolio-Bruono",
+    status: true,
     techStack: {
       style: tailwind,
       frameWork: React,
@@ -125,7 +148,7 @@ const Projects = () => {
                 className="h-fulll"
                 rel="noopener noreferrer"
                 href={project.linkDemo}
-                title={project.project}
+                title={project.linkDemo}
               >
                 <img
                   className="h-full w-full rounded-3xl"
@@ -134,10 +157,12 @@ const Projects = () => {
               </a>
             </div>
             <div className=" h-60 bg-background flex flex-col items-center justify-center no-scrollbar overflow-scroll bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
-              <h1 className="text-black w-full font-bold pt-6 text-3xl pb-9">
+              <h1 className="text-black text-center w-full font-bold text-3xl ">
                 {project.project}
               </h1>
-              <div className="flex justify-between items-center no-scrollbar overflow-scroll w-full gap-3 ">
+              {project.status == true ? <p className="text-xl font-bold flex justify-center items-start w-full my-3 bg-malachite-600 px-3 rounded text-background ">Finish</p> :
+                <p className="text-xl font-bold bg-mahogany-600 px-3  flex justify-center items-start w-full my-3 rounded text-background ">Ongoing</p>}
+              <div className="flex items-center no-scrollbar overflow-scroll w-full gap-3 ">
                 <img
                   className="h-9 flex-shrink-0"
                   src={project.techStack.frameWork}

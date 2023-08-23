@@ -1,9 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/view-source",
-      "destination": "https://github.com/vercel/vercel",
-      "permanent": true
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
