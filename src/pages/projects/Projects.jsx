@@ -16,8 +16,29 @@ import wooder from "./asset/wooder.png";
 import js from "./asset/js.png"
 import sass from "./asset/sass.png"
 import figma from "./asset/figma.png"
-import { BackButton } from "../../components/BackButton";
+import crypto from "./asset/crypto.png"
+import html from "./asset/html.png"
+import grunt from "./asset/grunt.png"
 const projects = [
+  {
+    id: "123452",
+    project: "Finance flow",
+    linkDemo: "https://crypto-delta-rose.vercel.app/",
+    gitHubLink:
+      "https://github.com/Tritintruong114/Crypto.git",
+    techStack: {
+      style: sass,
+      frameWork: js,
+      router: figma,
+      database: html,
+      state: grunt
+    },
+    status: false,
+    image: crypto,
+    info: {
+      text: "Project with designed by Figma and built with Javascript and Scss. For client",
+    },
+  },
   {
     id: "1234",
     project: "Wooder",
@@ -27,7 +48,9 @@ const projects = [
     techStack: {
       style: sass,
       frameWork: js,
-      router: figma
+      router: figma,
+      database: html,
+      state: grunt
     },
     status: true,
     image: wooder,
