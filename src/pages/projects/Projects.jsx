@@ -15,6 +15,7 @@ import trackit from "./asset/trackit.png";
 import wooder from "./asset/wooder.png";
 import js from "./asset/js.png"
 import sass from "./asset/sass.png"
+import figma from "./asset/figma.png"
 import { BackButton } from "../../components/BackButton";
 const projects = [
   {
@@ -26,6 +27,7 @@ const projects = [
     techStack: {
       style: sass,
       frameWork: js,
+      router: figma
     },
     status: true,
     image: wooder,
@@ -69,7 +71,7 @@ const projects = [
     },
     image: iphone,
     info: {
-      text: "Moved on to designing the 3D model of the iPhone using Three.js, paying attention to the details and ensuring that the model was as realistic as possible. Deployed the web project to a hosting platform as Vercel",
+      text: "Moved on to designing the 3D model of the iPhone using Three.js, paying attention to the details and ensuring that the model was as realistic as possible. Deployed the web project to a hosting platform as Vercel.Best practice for motion development",
     },
   },
   {
@@ -134,8 +136,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="relative bg-teal overflow-scroll no-scrollbar gap-9 p-3 md:p-24  h-full w-full grid grid-cols-1 xl:grid-cols-4">
-      <BackButton />
+    <div className="relative bg-teal overflow-scroll no-scrollbar gap-9 p-3 md:px-24 md:pt-12  h-full w-full grid grid-cols-1 xl:grid-cols-4">
       {projects.map((project) => {
         return (
           <>
