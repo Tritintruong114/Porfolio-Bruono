@@ -76,19 +76,19 @@ const HomePage = () => {
       <div className="h-full w-full absolute backdrop-blur-sm"></div>
       <div className="flex justify-between w-full relative">
         <div className="flex w-full gap-3 ">
-          <div className="sm:hidden right-3 top-3 ">
+          <div className="sm:hidden absolute right-3 top-3 ">
             {!showMenu ? (
               <button onClick={() => setShowMenu(!showMenu)}>
                 <UilBars />
               </button>
             ) : (
-              <button onClick={() => setShowMenu(!showMenu)}>
+              <button className="z-50 absolute right-0" onClick={() => setShowMenu(!showMenu)}>
                 <UilMultiply />
               </button>
             )}
           </div>
           {showMenu ? (
-            <div className="sm:p-6 w-full justify-center flex items-center flex-col bg-black h-screen absolute sm:flex sm:w-full md:w-full lg:w-2/4">
+            <div className="sm:p-6 w-full justify-center flex items-center flex-col z-40 bg-black h-screen absolute sm:flex sm:w-full md:w-full lg:w-2/4">
               {buttons.map((button) => {
                 return (
                   <div
@@ -147,14 +147,14 @@ const HomePage = () => {
           </div> */}
 
           <div className="bg-background bg-opacity-10 p-6 rounded-xl">
-            <div className="flex md:justify-center  py-3  w-fit  rounded-t-3xl    items-center xl:justify-center justify-between flex-wrap">
+            <div className="flex md:justify-center  py-3 gap-3  w-fit  rounded-t-3xl    items-center xl:justify-center justify-between flex-wrap">
               <img
                 className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
                 src={tailwind}
                 title="Tailwind CSS - CSS FrameWork"
               ></img>
               <img
-                className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
+                className="h-8 hover:scale-125 hover:z-30 transition ease-in-out"
                 src={sass}
                 title="Tailwind CSS - CSS FrameWork"
               ></img>
@@ -223,7 +223,7 @@ const HomePage = () => {
                     </a>
                   </button>{" "}
                   <button className="border w-3/4 text-sm md:text-xl hover:bg-background hover:text-black active:bg-persian-600 active:text-background  px-3 py-1 rounded-xl">
-                    <Link to="/contact">Let's talk</Link>
+                    <Link to="/contact">Email</Link>
                   </button>
                 </div>
                 <div className="flex pl-3 items-center pt-3 pb-3 gap-3 justify-center">
