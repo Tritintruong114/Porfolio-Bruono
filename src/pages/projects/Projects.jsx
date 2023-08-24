@@ -36,7 +36,7 @@ const projects = [
     status: false,
     image: crypto,
     info: {
-      text: "Project with designed by Figma and built with Javascript and Scss. For client",
+      text: "Project with designed by Figma and built with Javascript and Scss. Front End Role",
     },
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     status: true,
     image: wooder,
     info: {
-      text: "Wooder was built for the sass best practice with responsive for mobile, compile working with Figma and Photoshop. This project was built by Javascript and HTML , Scss.",
+      text: "Wooder was built for the sass best practice with responsive for mobile, compile working with Figma and Photoshop. This project was built by Javascript and HTML , Scss. Front End Role",
     },
   },
   {
@@ -75,7 +75,7 @@ const projects = [
     },
     image: trackit,
     info: {
-      text: "The task tracker app is simple and easy to use, with a clean and modern design. The use of React JS is apparent, with the app being fast and responsive, and the state management being handled efficiently.",
+      text: "The task tracker app is simple and easy to use, with a clean and modern design. The use of React JS is apparent, with the app being fast and responsive, and the state management being handled efficiently.Full Stack Role",
     },
   },
   {
@@ -94,7 +94,7 @@ const projects = [
     },
     image: iphone,
     info: {
-      text: "Moved on to designing the 3D model of the iPhone using Three.js, paying attention to the details and ensuring that the model was as realistic as possible. Deployed the web project to a hosting platform as Vercel.Best practice for motion development",
+      text: "Moved on to designing the 3D model of the iPhone using Three.js, paying attention to the details and ensuring that the model was as realistic as possible. Deployed the web project to a hosting platform as Vercel.Best practice for motion development. Front End Role",
     },
   },
   {
@@ -113,7 +113,7 @@ const projects = [
     },
     image: maison,
     info: {
-      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user, Implement AI MidJourney for generating IMG and focus on the Core Customer",
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user, Implement AI MidJourney for generating IMG and focus on the Core Customer.Front End Role",
     },
   },
   {
@@ -132,7 +132,7 @@ const projects = [
     },
     image: movie,
     info: {
-      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user",
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user.Full Stack Role",
     },
   },
   {
@@ -159,13 +159,13 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="relative bg-teal overflow-scroll no-scrollbar gap-9 p-3 md:px-24 md:pt-12  h-full w-full grid grid-cols-1 xl:grid-cols-4">
+    <div className="relative bg-teal no-scrollbar gap-9 py-12 px-6 md:px-24 md:pt-12  h-full w-full grid grid-cols-1 xl:grid-cols-4">
       {projects.map((project) => {
         return (
-          <>
+          <div className="col-span-4 grid md:grid-cols-4 rounded-xl overflow-hidden" key={project.id
+          }>
             <div
-              key={project.id}
-              className="w-full  bg-background xl:col-span-3 shadow-2xl p-6 flex flex-col bg-white  rounded-3xl flex-shrink-0 bg-wh"
+              className="w-full  bg-background xl:col-span-3 shadow-2xl p-3 flex flex-col bg-white  md:rounded-l-xl flex-shrink-0 bg-wh"
             >
               <a
                 target="_blank"
@@ -175,17 +175,17 @@ const Projects = () => {
                 title={project.linkDemo}
               >
                 <img
-                  className="h-full w-full rounded-3xl"
+                  className="h-full w-full "
                   src={project.image}
                 />
               </a>
             </div>
-            <div className=" h-60 bg-background flex flex-col items-center justify-center no-scrollbar overflow-scroll bg-white xl:h-full shadow-2xl rounded-3xl p-6 col-span-1">
+            <div className=" bg-background flex flex-col items-center justify-center no-scrollbar bg-white xl:h-full shadow-2xl md:rounded-r-xl p-6 col-span-1">
               <h1 className="text-black text-center w-full font-bold text-3xl ">
                 {project.project}
               </h1>
-              {project.status == true ? <p className="text-xl font-bold flex justify-center items-start w-full my-3 bg-malachite-600 px-3 rounded text-background ">Finish</p> :
-                <p className="text-xl font-bold bg-mahogany-600 px-3  flex justify-center items-start w-full my-3 rounded text-background ">Ongoing</p>}
+              {project.status == true ? <p className="text-xl font-bold flex justify-center items-start w-1/2 my-3 bg-malachite-600 px-3 rounded text-background ">Finish</p> :
+                <p className="text-xl font-bold bg-mahogany-600 px-3  flex justify-center items-start w-1/2 my-3 rounded text-background ">Ongoing</p>}
               <div className="flex items-center no-scrollbar overflow-scroll w-full gap-3 ">
                 <img
                   className="h-9 flex-shrink-0"
@@ -248,10 +248,11 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-          </>
+          </div>
+
         );
       })}
-    </div>
+    </div >
   );
 };
 

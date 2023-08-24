@@ -23,6 +23,8 @@ import firebase from "./asset/firebase.png";
 import sanity2 from "./asset/sanity2.png";
 import router from "./asset/router.png";
 import html5 from "./asset/html5.png";
+import sass from "./asset/sass.png"
+import ts from "./asset/ts.png"
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
@@ -63,7 +65,7 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="h-full w-full text-background ">
+    <div className="h-screen w-full text-background ">
       <img
         className="absolute object-cover h-full w-full z-0"
         src={computer}
@@ -83,11 +85,11 @@ const HomePage = () => {
             )}
           </div>
           {showMenu ? (
-            <div className="sm:p-6 absolute  text-center  sm:flex sm:w-full md:w-full lg:w-2/4 grid items-center justify-center">
+            <div className="sm:p-6 w-full justify-center flex items-center flex-col bg-black h-screen absolute sm:flex sm:w-full md:w-full lg:w-2/4">
               {buttons.map((button) => {
                 return (
                   <div
-                    className="py-3 backdrop:blur-2xl rounded-xl  hover:text-black hover:bg-background bg-opacity-20 w-screen sm:w-1/4  "
+                    className="py-3 backdrop:blur-2xl tracking-widest  text-center  hover:text-black hover:bg-background bg-opacity-20 w-screen sm:w-1/4  "
                     key={button.button}
                   >
                     <h1
@@ -101,7 +103,7 @@ const HomePage = () => {
               })}
             </div>
           ) : (
-            <div className="hidden sm:visible  mt-12 sm:ml-24 md:ml-36  sm:flex  md:w-full lg:w-2/4 sm:w-full absolute">
+            <div className="hidden sm:visible tracking-widest   mt-12 sm:ml-24 md:ml-36  sm:flex  md:w-full lg:w-2/4 sm:w-full absolute">
               {buttons.map((button) => {
                 return (
                   <div
@@ -124,8 +126,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className="w-full md:pl-12 h-full text-background z-10 absolute flex items-center">
-        <div className="m-3 sm:m-24">
-          <h1 className="font-bold py-3  w-2/4 xl:w-1/2  text-6xl text-left xl:text-center">
+        <div className="px-6 sm:m-24">
+          <h1 className="font-bold py-3  w-2/4 xl:w-1/2  text-3xl md:text-6xl text-left xl:text-center">
             Bruno Truong
           </h1>
           <p className="text-xl rounded-xl text-left xl:text-center w-full opacity-60 pb-3  sm:w-1/2 ">{`<FrontEndDev />`}</p>
@@ -140,82 +142,100 @@ const HomePage = () => {
               <h1>+ Open Minded</h1>
             </div>
           </div> */}
-          <div className="flex md:justify-center  py-3 bg-background bg-opacity-10  rounded-t-3xl no-scrollbar w-full md:w-3/4 xl:w-1/2 overflow-scroll   items-center xl:justify-center justify-between gap-3 xl:gap-6">
-            <img
-              className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
-              src={tailwind}
-              title="Tailwind CSS - CSS FrameWork"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={sanity2}
-              title="CMS - Sanity"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={firebase}
-              title="Firebase"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={reactjs}
-              title="React JS"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={html5}
-              title="HTML"
-            ></img>{" "}
-            <img
-              className="h-7 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={router}
-              title="React Router Dom"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={js}
-              title="Javascript"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={css}
-              title="CSS"
-            ></img>
-            <img
-              className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
-              src={redux}
-              title="Redux"
-            ></img>
-          </div>
-          <div className=" flex  flex-col   bg-background bg-opacity-10 gap-3 items-center text-center w-full md:w-3/4 xl:w-1/2 sm:w-full h-50  rounded-b-3xl ">
-            <p className="w-3/4 pt-3">
-              Hi there, welcome to my personal website.
-              <br /> As a FrontEnd Developer, patience and passion are my
-              strength, creativity and quick learning are my hobbies. And with
-              those, everything is possible.
-            </p>
-            <div className="flex gap-3 flex-col w-full justify-center items-center">
-              <div className="flex h-12 text-xl font-bold w-full px-6 gap-3">
-                <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
-                  <a download href={FrontEndDev}>
-                    Resume
-                  </a>
-                </button>{" "}
-                <button className="border w-3/4 hover:bg-background hover:text-black active:bg-persian-600 active:text-background  px-3 py-1 rounded-xl">
-                  <Link to="/contact">Let's talk</Link>
-                </button>
-              </div>
-              <div className="flex pl-3 items-center pt-3 pb-3 gap-3 justify-center">
-                {contactsIcon.map((icon) => (
-                  <button className=" active:text-persian-600" key={icon.name}>
-                    <a rel="noreferrer" href={icon.link} target="_blank">
-                      {icon.icon}
+
+          <div className="bg-background bg-opacity-10 p-6 rounded-xl">
+            <div className="flex md:justify-center  py-3  w-fit  rounded-t-3xl    items-center xl:justify-center justify-between flex-wrap">
+              <img
+                className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
+                src={tailwind}
+                title="Tailwind CSS - CSS FrameWork"
+              ></img>
+              <img
+                className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
+                src={sass}
+                title="Tailwind CSS - CSS FrameWork"
+              ></img>
+
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={css}
+                title="CSS"
+              ></img>
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={sanity2}
+                title="CMS - Sanity"
+              ></img>
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={firebase}
+                title="Firebase"
+              ></img>
+
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={js}
+                title="Javascript"
+              ></img>
+
+              <img
+                className="h-9  hover:scale-125 hover:z-30 transition ease-in-out"
+                src={ts}
+                title="Tailwind CSS - CSS FrameWork"
+              ></img>
+
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={reactjs}
+                title="React JS"
+              ></img>
+              <img
+                className="h-7 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={router}
+                title="React Router Dom"
+              ></img>
+
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={redux}
+                title="Redux"
+              ></img>
+              <img
+                className="h-9 hover:scale-125 hover:z-30 transition ease-in-out"
+                src={html5}
+                title="HTML"
+              ></img>{" "}
+
+            </div>
+            <div className=" flex  flex-col    gap-3 items-center text-center w-full h-50  rounded-b-3xl ">
+              <p className="w-full pt-3">
+                Hi there, welcome to my personal website.
+                <br />
+              </p>
+              <div className="flex gap-3 flex-col w-full justify-center items-center">
+                <div className="flex h-12 text-xl font-bold w-full px-6 gap-3">
+                  <button className="border w-3/4 text-sm md:text-xl hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
+                    <a download href={FrontEndDev}>
+                      Resume
                     </a>
+                  </button>{" "}
+                  <button className="border w-3/4 text-sm md:text-xl hover:bg-background hover:text-black active:bg-persian-600 active:text-background  px-3 py-1 rounded-xl">
+                    <Link to="/contact">Let's talk</Link>
                   </button>
-                ))}
+                </div>
+                <div className="flex pl-3 items-center pt-3 pb-3 gap-3 justify-center">
+                  {contactsIcon.map((icon) => (
+                    <button className=" active:text-persian-600" key={icon.name}>
+                      <a rel="noreferrer" href={icon.link} target="_blank">
+                        {icon.icon}
+                      </a>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
