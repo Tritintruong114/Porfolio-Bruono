@@ -25,6 +25,13 @@ import router from "./asset/router.png";
 import html5 from "./asset/html5.png";
 import sass from "./asset/sass.png"
 import ts from "./asset/ts.png"
+import mh from "./asset/mh.png"
+import iphone from "./asset/iphone.png"
+import maison from "./asset/maison.png"
+import trackit from "./asset/trackit.png"
+import wooder from "./asset/wooder.png"
+import crypto from "./asset/crypto.png"
+import bruno from "./asset/bruno.png"
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
@@ -61,15 +68,15 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="h-screen w-full text-background ">
+    <div className="h-screen flex justify-center w-full text-background ">
       <img
         className="absolute object-cover h-full w-full z-0"
         src={computer}
       ></img>
       <div className="h-full w-full absolute backdrop-blur-sm"></div>
       <div className="flex justify-between w-full relative">
-        <div className="flex z-20 w-full gap-3 ">
-          <div className="sm:hidden z-30 absolute right-3 top-3 ">
+        <div className="flex w-full gap-3 ">
+          <div className="sm:hidden right-3 top-3 ">
             {!showMenu ? (
               <button onClick={() => setShowMenu(!showMenu)}>
                 <UilBars />
@@ -99,11 +106,11 @@ const HomePage = () => {
               })}
             </div>
           ) : (
-            <div className="hidden sm:visible tracking-widest   mt-12 sm:ml-24 md:ml-36  sm:flex  md:w-full lg:w-2/4 sm:w-full absolute">
+            <div className="hidden sm:visible absolute z-50 tracking-widest gap-12   sm:flex w-full justify-center items-center">
               {buttons.map((button) => {
                 return (
                   <div
-                    className="py-3 rounded-xl text-left hover:decoration-blue-500 decoration-4 hover:underline w-screen sm:w-1/4  "
+                    className="py-3 rounded-xl text-center hover:decoration-mahogany-600 decoration-4 hover:underline  "
                     key={button.button}
                   >
                     <Link to={`${button.button}`}>
@@ -121,7 +128,7 @@ const HomePage = () => {
           )}
         </div>
       </div>
-      <div className="w-full md:pl-12 h-full text-background z-10 absolute flex items-center">
+      <div className="w-1/2  justify-center h-full text-background z-20 absolute flex items-center">
         <div className="px-6 sm:m-24">
           <h1 className="font-bold py-3 text-3xl md:text-6xl text-center">
             Bruno Truong
@@ -234,6 +241,7 @@ const HomePage = () => {
 
         </div>
       </div>
+
     </div>
   );
 };
