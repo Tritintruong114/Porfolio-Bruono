@@ -33,6 +33,7 @@ const Post = () => {
     <>
 
       <div className=" w-5/6 bg-background h-full overflow-scroll no-scrollbar my-3 relative bg-white shadow-2xl rounded-3xl pt-12 flex flex-col  items-center">
+        <BackButton />
         <PortableText value={post?.body} components={RichTextComponents} />
       </div>
     </>

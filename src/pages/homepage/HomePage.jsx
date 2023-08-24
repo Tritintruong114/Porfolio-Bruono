@@ -8,7 +8,7 @@ import {
   UilDribbble,
   UilLinkedin,
 } from "@iconscout/react-unicons";
-import FrontEndDev from "./FrontEndDev.pdf";
+import TruongTriTin_FED from "./TruongTriTin_FED.pdf";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -48,11 +48,7 @@ const HomePage = () => {
       icon: <UilGithub />,
       link: "https://github.com/Tritintruong114",
     },
-    {
-      name: "Dribble",
-      icon: <UilDribbble />,
-      link: "https://dribbble.com/truongtritin114",
-    },
+
     {
       name: "Linkedin",
       icon: <UilLinkedin />,
@@ -127,10 +123,10 @@ const HomePage = () => {
       </div>
       <div className="w-full md:pl-12 h-full text-background z-10 absolute flex items-center">
         <div className="px-6 sm:m-24">
-          <h1 className="font-bold py-3  w-2/4 xl:w-1/2  text-3xl md:text-6xl text-left xl:text-center">
+          <h1 className="font-bold py-3 text-3xl md:text-6xl text-center">
             Bruno Truong
           </h1>
-          <p className="text-xl rounded-xl text-left xl:text-center w-full opacity-60 pb-3  sm:w-1/2 ">{`<FrontEndDev />`}</p>
+          <p className="text-xl rounded-xl justify-center text-center xl:text-center w-full opacity-60 pb-3">{`<FrontEndDev />`}</p>
           {/* <div className="grid w-2/4 sm:w-2/4 sm:items-center sm:justify-center gap-3 py-3">
             <div className="bg-white w-fit px-3 italic text-black font-medium py-1 rounded-3xl">
               <h1>+ Think organization</h1>
@@ -215,7 +211,7 @@ const HomePage = () => {
               <div className="flex gap-3 flex-col w-full justify-center items-center">
                 <div className="flex h-12 text-xl font-bold w-full px-6 gap-3">
                   <button className="border w-3/4 text-sm md:text-xl hover:bg-background hover:text-black active:bg-persian-600 active:text-background px-3 py-1 rounded-xl">
-                    <a download href={FrontEndDev}>
+                    <a download href={TruongTriTin_FED}>
                       Resume
                     </a>
                   </button>{" "}

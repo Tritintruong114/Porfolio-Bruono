@@ -21,7 +21,7 @@ const Contact = () => {
     } else toast.error("Email invalid!");
   };
   return (
-    <div className="sm:grid bg-background rounded-3xl flex shadow-2xl flex-col sm:grid-cols-4">
+    <div className="sm:grid bg-background mt-12 rounded-3xl flex shadow-2xl flex-col sm:grid-cols-4">
       <BackButton />
       <div className=" p-6 col-span-3">
         <h1 className="flex xl:text-4xl py-3 font-bold items-center justify-center">

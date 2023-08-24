@@ -19,7 +19,34 @@ import figma from "./asset/figma.png"
 import crypto from "./asset/crypto.png"
 import html from "./asset/html.png"
 import grunt from "./asset/grunt.png"
+import vite from "./asset/vite.png"
+import mh from "./asset/mh.png"
+import { BackButton } from "../../components/BackButton";
 const projects = [
+
+  {
+    id: "1234526",
+    project: "Manh Hieu",
+    linkDemo: "https://mh-photo.vercel.app",
+    gitHubLink:
+      "https://github.com/Tritintruong114/mh",
+    techStack: {
+      style: tailwind,
+      html: vite,
+      frameWork: React,
+      router: router,
+      database: firebase,
+      state: redux,
+      content: sanity2,
+    },
+    role: true,
+    status: false,
+    mvp: true,
+    image: mh,
+    info: {
+      text: "Built with React JS Eco and Implement Sanity for JAM Stack. For client. Full Stack Role",
+    },
+  },
   {
     id: "123452",
     project: "Finance flow",
@@ -33,7 +60,10 @@ const projects = [
       database: html,
       state: grunt
     },
+    role: false,
+
     status: false,
+    mvp: false,
     image: crypto,
     info: {
       text: "Project with designed by Figma and built with Javascript and Scss. Front End Role",
@@ -52,6 +82,8 @@ const projects = [
       database: html,
       state: grunt
     },
+    role: false,
+    mvp: false,
     status: true,
     image: wooder,
     info: {
@@ -64,18 +96,45 @@ const projects = [
     linkDemo: "https://task-tracker-reactjs-2.vercel.app/",
     gitHubLink:
       "https://github.com/Tritintruong114/task-tracker-reactjs-2.git",
+    mvp: true,
     status: false,
     techStack: {
       style: tailwind,
+      html: vite,
       frameWork: React,
       router: router,
       database: firebase,
       state: redux,
       content: sanity2,
     },
+    role: true,
+
     image: trackit,
     info: {
       text: "The task tracker app is simple and easy to use, with a clean and modern design. The use of React JS is apparent, with the app being fast and responsive, and the state management being handled efficiently.Full Stack Role",
+    },
+  },
+  {
+    id: "3",
+    project: "Movie Dashboard",
+    linkDemo: "https://iridescent-taffy-0e81cb.netlify.app/",
+    gitHubLink: "https://github.com/Tritintruong114/Movie-Dashboard",
+    desc: "Live preview",
+    mvp: false,
+    status: true,
+    techStack: {
+      style: tailwind,
+      frameWork: React,
+      router: router,
+      database: firebase,
+      html: vite,
+      state: redux,
+    },
+    role: false,
+
+    image: movie,
+    info: {
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user.Full Stack Role",
     },
   },
   {
@@ -84,14 +143,17 @@ const projects = [
     linkDemo: "https://iphone-3d-website-starter-main.vercel.app/",
     gitHubLink:
       "https://github.com/Tritintruong114/iphone-3d-website-starter-main",
+    mvp: false,
     status: true,
     techStack: {
       frameWork: threejs,
       style: gsap,
       state: redux,
       router: router,
+      html: vite,
       database: tailwind,
     },
+    role: true,
     image: iphone,
     info: {
       text: "Moved on to designing the 3D model of the iPhone using Three.js, paying attention to the details and ensuring that the model was as realistic as possible. Deployed the web project to a hosting platform as Vercel.Best practice for motion development. Front End Role",
@@ -102,52 +164,41 @@ const projects = [
     project: "Maison De Villa",
     linkDemo: "https://maison-de-villa.vercel.app/",
     gitHubLink: "https://github.com/Tritintruong114/Maison-De-Villa",
-    status: true,
+    mvp: true,
+    status: false,
     techStack: {
       style: tailwind,
+      html: vite,
       frameWork: React,
       router: router,
       database: firebase,
       state: redux,
       content: sanity2,
     },
+    role: true,
     image: maison,
     info: {
-      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user, Implement AI MidJourney for generating IMG and focus on the Core Customer.Front End Role",
+      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user, Implement AI MidJourney for generating IMG and focus on the Core Customer.Full Stack Role",
     },
   },
-  {
-    id: "3",
-    project: "Movie Dashboard",
-    linkDemo: "https://iridescent-taffy-0e81cb.netlify.app/",
-    gitHubLink: "https://github.com/Tritintruong114/Movie-Dashboard",
-    desc: "Live preview",
-    status: true,
-    techStack: {
-      style: tailwind,
-      frameWork: React,
-      router: router,
-      database: firebase,
-      state: redux,
-    },
-    image: movie,
-    info: {
-      text: "Using React JS for the base , React Router Dom for navigate user , and styled with Tailwind CSS, and Firebase for register user and store all the new user.Full Stack Role",
-    },
-  },
+
   {
     id: "4",
     project: "Bruno Website",
     linkDemo: "https://porfolio-bruono.vercel.app/",
     gitHubLink: "https://github.com/Tritintruong114/Porfolio-Bruono",
-    status: true,
+    mvp: true,
+    status: false,
     techStack: {
       style: tailwind,
       frameWork: React,
       router: router,
       content: sanity2,
+      html: vite,
       state: redux,
     },
+    role: true,
+
     info: {
       text: "Using React JS for base, React Router Dom for navigate user, and styled with Tailwind Css and Sanity Studio for CMS module with CRUD features, Redux for the state management.",
     },
@@ -159,17 +210,18 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="relative bg-teal no-scrollbar gap-9 py-12 px-6 md:px-24 md:pt-12  h-full w-full grid grid-cols-1 xl:grid-cols-4">
+    <div className="relative  no-scrollbar gap-9 py-12 px-6 md:px-24 md:pt-20  h-full w-full grid grid-cols-1 xl:grid-cols-4">
+      <BackButton />
       {projects.map((project) => {
         return (
-          <div className="col-span-4 grid md:grid-cols-4 rounded-xl overflow-hidden" key={project.id
+          <div className="col-span-4 h-full w-full shadow-2xl mb-10 grid xl:grid-cols-4 rounded-xl overflow-hidden" key={project.id
           }>
             <div
-              className="w-full  bg-background xl:col-span-3 shadow-2xl p-3 flex flex-col bg-white  md:rounded-l-xl flex-shrink-0 bg-wh"
+              className="w-full h-full  bg-background xl:col-span-3 shadow-xl flex flex-col bg-white  md:rounded-l-xl flex-shrink-0 bg-wh"
             >
               <a
                 target="_blank"
-                className="h-fulll"
+                className="h-full w-full object-cover"
                 rel="noopener noreferrer"
                 href={project.linkDemo}
                 title={project.linkDemo}
@@ -184,9 +236,11 @@ const Projects = () => {
               <h1 className="text-black text-center w-full font-bold text-3xl ">
                 {project.project}
               </h1>
+              {project.role == true ? <p className="text-md font-bold">Full Stack Position</p> : <p className="tex-md font-semibold">Front End Position</p>}
               {project.status == true ? <p className="text-xl font-bold flex justify-center items-start w-1/2 my-3 bg-malachite-600 px-3 rounded text-background ">Finish</p> :
                 <p className="text-xl font-bold bg-mahogany-600 px-3  flex justify-center items-start w-1/2 my-3 rounded text-background ">Ongoing</p>}
-              <div className="flex items-center no-scrollbar overflow-scroll w-full gap-3 ">
+              {project.mvp == true ? <p className="text-xl bg-mahogany-600 px-3 rounded mb-3  text-background">MVP</p> : <p className="bg-malachite-600 px-3 rounded mb-3 text-background">Personal Project</p>}
+              <div className="flex items-center justify-center no-scrollbar overflow-scroll w-full gap-3 ">
                 <img
                   className="h-9 flex-shrink-0"
                   src={project.techStack.frameWork}
