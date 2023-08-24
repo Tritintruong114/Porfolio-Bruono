@@ -78,7 +78,7 @@ const HomePage = () => {
         <div className="flex w-full gap-3 ">
           <div className="sm:hidden absolute right-3 top-3 ">
             {!showMenu ? (
-              <button onClick={() => setShowMenu(!showMenu)}>
+              <button className="z-50 absolute right-0" onClick={() => setShowMenu(!showMenu)}>
                 <UilBars />
               </button>
             ) : (

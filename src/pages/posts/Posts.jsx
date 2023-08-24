@@ -14,8 +14,8 @@ const Posts = () => {
 
   return (
     <div className=" relative no-scrollbar bg-teal h-full overflow-scroll text-white w-full">
-      <BackButton />
       <div className="w-full xl:px-48 md:px-12 py-12 px-6 flex flex-col gap-6 md:grid grid-cols-1 md:grid-cols-2">
+        <BackButton />
         <div className="col-span-2 bg-background shadow-2xl rounded-3xl sm:visible invisible absolute sm:relative">
           {blogPosts[0].mainImage?.asset?.url && (
             <div
